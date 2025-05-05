@@ -1362,6 +1362,9 @@ img[loading=lazy] {
       margin-top: 6px;
       padding-bottom: 0;
    }
+   .book-fs__wrap-info {
+      padding: 0 16px 0 0;
+   }
    .book-fs__wrap-info p {
       display: none;
    }
