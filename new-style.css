@@ -1086,7 +1086,9 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    height: calc(100vh - 81px - 197px - 19px - 110px);
    padding-top: 7px;
 }
-
+.champer-page__item .tabs__wrap-tab {
+   justify-content: space-between;
+}
 .champers__list li {
    color: #fff;
    cursor: pointer;
