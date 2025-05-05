@@ -864,20 +864,23 @@ img[loading=lazy] {
    background-color: #6710FF;
    border-color: #6710FF;
 }
-.trade-notes form {
+.book__wrap-search-form,
+.book__wrap-search-form form {
+   width: 100%;
+}
+.book__wrap-search-form form {
    border: 1px solid #DBDBDB;
    border-radius: 5px;
    display: flex;
    height: 32px;
    margin: 24px 0 18px;
-   width: 100%;
 }
-.trade-notes form input {
+.book__wrap-search-form input {
    background: none;
    height: 100%;
    outline: none;
 }
-.trade-notes form input:not([type=submit]) {
+.book__wrap-search-form input:not([type=submit]) {
    color: #fff;
    font-family: "Mona Sans", sans-serif;
    font-size: 14px;
@@ -888,7 +891,7 @@ img[loading=lazy] {
    padding-right: 12px;
    width: calc(100% - 31px);
 }
-.trade-notes form input[type=submit] {
+.book__wrap-search-form form input[type=submit] {
    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0_2028_40927)'%3e%3cpath d='M15.1003 14.9904L10.4628 10.3529C11.1824 9.42252 11.5717 8.28502 11.5717 7.08859C11.5717 5.65645 11.0128 4.31359 10.0021 3.30109C8.99135 2.28859 7.64492 1.73145 6.21456 1.73145C4.78421 1.73145 3.43778 2.29037 2.42706 3.30109C1.41456 4.3118 0.857422 5.65645 0.857422 7.08859C0.857422 8.51895 1.41635 9.86537 2.42706 10.8761C3.43778 11.8886 4.78242 12.4457 6.21456 12.4457C7.41099 12.4457 8.54671 12.0564 9.47707 11.3386L14.1146 15.9743C14.1282 15.9879 14.1443 15.9987 14.1621 16.0061C14.1799 16.0134 14.1989 16.0172 14.2181 16.0172C14.2374 16.0172 14.2564 16.0134 14.2742 16.0061C14.292 15.9987 14.3081 15.9879 14.3217 15.9743L15.1003 15.1975C15.1139 15.1839 15.1247 15.1678 15.132 15.15C15.1394 15.1322 15.1432 15.1132 15.1432 15.0939C15.1432 15.0747 15.1394 15.0557 15.132 15.0379C15.1247 15.0201 15.1139 15.004 15.1003 14.9904ZM9.04314 9.91716C8.28599 10.6725 7.28242 11.0886 6.21456 11.0886C5.14671 11.0886 4.14314 10.6725 3.38599 9.91716C2.63064 9.16002 2.21456 8.15645 2.21456 7.08859C2.21456 6.02073 2.63064 5.01537 3.38599 4.26002C4.14314 3.50466 5.14671 3.08859 6.21456 3.08859C7.28242 3.08859 8.28778 3.50287 9.04314 4.26002C9.79849 5.01716 10.2146 6.02073 10.2146 7.08859C10.2146 8.15645 9.79849 9.1618 9.04314 9.91716Z' fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0_2028_40927'%3e%3crect width='16' height='16' fill='white' transform='translate(0 0.87207)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
    background-repeat: no-repeat;
    background-position: 50% 45%;
@@ -1032,6 +1035,144 @@ img[loading=lazy] {
 }
 .trade-notes__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
    background: rgba(255, 255, 255, 1);
+}
+
+body.page-template-champers-single {
+   overflow: hidden;
+}
+body.page-template-champers-single .champer-page {
+   min-height: 100vh;
+   padding-top: 81px;
+}
+body.page-template-champers-single .champer-page__content,
+body.page-template-champers-single .champer-page__items {
+   height: calc(100vh - 81px - 19px - 110px);
+}
+body.page-template-champers-single .champer-page__items {
+   margin-bottom: 19px;
+}
+body.page-template-champers-single .champer-page__bottomWrapPlaeer {
+   background-color: #1E1E1E;
+   bottom: 0;
+   height: 110px;
+   left: 0;
+   position: absolute;
+   right: 0;
+}
+.champer-page {
+   background-color: #000;
+}
+.champer-page__items {
+   display: flex;
+   flex-wrap: wrap;
+}
+.champer-page__item {
+   min-height: 100%;
+}
+.champer-page__item:nth-child(1) {
+   width: 332px;
+}
+.champer-page__item:nth-child(2) {
+   width: calc(100% - 332px);
+}
+.champer-page__sidebar {
+   background-color: #1E1E1E;
+   border-radius: 8px;
+   height: 100%;
+   padding: 17px 20px;
+   width: 100%;
+}
+.champer-page__item .tabContent {
+   height: calc(100vh - 81px - 197px - 19px - 110px);
+   padding-top: 7px;
+}
+
+.champers__list li {
+   color: #fff;
+   cursor: pointer;
+   display: table;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 100%;
+   transition: 0.3s ease 0s;
+}
+.champers__list li:not(:last-child) {
+   margin-bottom: 14px;
+}
+.champers__list li:not(.active) {
+   opacity: 0.5;
+}
+.champers__list li:hover {
+   opacity: 1;
+}
+.champer-page__sidebarHead,
+.champer-page__contentTop {
+   align-items: center;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 15px;
+}
+.champer-page__item .tabContent,
+.champer-page__content {
+   overflow-y: auto;
+}
+.champer-page__item .tabContent::-webkit-scrollbar,
+.champer-page__content::-webkit-scrollbar {
+   width: 4px;
+}
+.champer-page__item .tabContent::-webkit-scrollbar-thumb,
+.champer-page__content::-webkit-scrollbar-thumb {
+   background-color: #808080;
+   border-radius: 43px; 
+}
+.champer-page__content {
+   color: #fff;
+   font-family: "Gilda Display", serif;
+   padding-left: 48px;
+   padding-right: 44px;
+}
+.champer-page__contentTop {
+   background-color: #000;
+   margin: 0 -5px -20px;
+   padding: 7px 5px 0;
+   position: sticky;
+   top: 0;
+}
+.champer-page__name {
+   color: rgba(255, 255, 255, 0.5);
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 115%;
+   margin-bottom: 0 !important;
+   padding-right: 20px;
+}
+.champer-page__number-of-words {
+   color: rgba(255, 255, 255, 0.5);
+   font-family: "Gabarito", sans-serif;
+   font-size: 12px;
+   font-weight: 400;
+   line-height: 100%;
+   text-align: right;
+}
+.champer-page__number-of-words span {
+   color: rgba(255, 255, 255, 1);
+   font-size: 14px;
+}
+.champer-page__title {
+   font-family: "Gilda Display", sans-serif;
+   font-weight: 400;
+   font-size: 32px;
+   line-height: normal;
+   margin-bottom: 43px;
+   padding-top: 30px;
+}
+.champer-page__content p {
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 18px;
+   margin-bottom: 24px;
+   text-align: justify;
 }
 
 @media (max-width: 1599px) {
@@ -1596,7 +1737,7 @@ img[loading=lazy] {
    .trade-notes.there-are-blocks .trade-notes__content {
       min-height: auto;
    }
-   .trade-notes form {
+   .book__wrap-search-form form {
       margin: 22px 0 6px;
    }
    .tabs__wrap-tab {

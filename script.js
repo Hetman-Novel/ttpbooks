@@ -55,9 +55,83 @@ document.querySelectorAll('.tabs__wrap-tab .tab').forEach(function (tab) {
    });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+
+   // Скролл по клику на список Chapters
+   const scrollContainer = document.querySelector('.champer-page__content');
+   const elements = document.querySelectorAll('[data-name]');
+   const sections = document.querySelectorAll('[data-title]');
+   function updateActiveClasses() {
+      let currentSection = "";
+      sections.forEach((section) => {
+         const sectionTop = section.offsetTop;
+         if (scrollContainer.scrollTop >= sectionTop) {
+            currentSection = section.getAttribute('data-title');
+         }
+      });
+      elements.forEach((el) => {
+         el.classList.toggle('active', el.getAttribute('data-name') === currentSection);
+      });
+   }
+   scrollContainer.addEventListener('scroll', updateActiveClasses);
+   elements.forEach(function (el) {
+      el.addEventListener('click', function () {
+         const name = el.getAttribute('data-name');
+         const target = document.querySelector(`[data-title="${name}"]`);
+         if (target) {
+            scrollContainer.scrollTo({
+               top: target.offsetTop - 30,
+               behavior: 'smooth'
+            });
+         }
+      });
+   });
+   updateActiveClasses();
+
+   const container = document.querySelector('.champer-page__content');
+
+   // Прогресс чтения
+   const progressEl = document.querySelector('.champer-page__number-of-words[data-type="progress"]');
+   const sections1 = container.querySelectorAll('[data-title]');
+   if (progressEl && sections1.length > 0) {
+      const span1 = progressEl.querySelector('span');
+      function updateProgress() {
+         const scrollTop = container.scrollTop;
+         const scrollHeight = container.scrollHeight - container.clientHeight;
+         const percent = Math.round((scrollTop / scrollHeight) * 100);
+         span1.textContent = percent;
+         progressEl.lastChild.textContent = '%';
+      }
+      container.addEventListener('scroll', updateProgress);
+      updateProgress();
+   }
+
+   // Номер главы
+   const chaptersEl = document.querySelector('.champer-page__number-of-words[data-type="chapters"]');
+   const sections2 = container.querySelectorAll('[data-title]');
+   if (chaptersEl && sections2.length > 0) {
+      const span2 = chaptersEl.querySelector('span');
+      function updateChapterCounter() {
+         let currentIndex = 0;
+         sections2.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            if (sectionTop - container.scrollTop < container.clientHeight / 2) {
+               currentIndex = index;
+            }
+         });
+         span2.textContent = currentIndex + 1;
+         chaptersEl.lastChild.textContent = '/' + sections2.length;
+      }
+      container.addEventListener('scroll', updateChapterCounter);
+      updateChapterCounter();
+   }
+});
+
 
 // Scroll to top
 const btnToTop = document.getElementById('btn-to-top');
-btnToTop.addEventListener('click', function() {
-	window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (btnToTop) {
+   btnToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+   });
+}
