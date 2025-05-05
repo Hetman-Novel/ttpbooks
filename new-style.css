@@ -572,9 +572,6 @@ img[loading=lazy] {
    flex-wrap: wrap;
    margin-top: 31px;
 }
-.book-fs__item {
-
-}
 .book-fs__item:nth-child(1) {
    width: 333px;
 }
@@ -770,6 +767,9 @@ img[loading=lazy] {
 .trade-notes .container {
    padding-bottom: 315px;
 }
+.trade-notes.there-are-blocks .container {
+   padding-bottom: 42px;
+}
 .trade-notes__illustration {
    bottom: 0;
    max-height: 100%;
@@ -779,6 +779,9 @@ img[loading=lazy] {
    /*transform: translateY(-50%);*/
    /*top: 50%;*/
 }
+.trade-notes.there-are-blocks .trade-notes__illustration {
+   display: none;
+}
 .trade-notes__items {
    display: flex;
    flex-wrap: wrap;
@@ -787,6 +790,7 @@ img[loading=lazy] {
    width: 268px;
 }
 .trade-notes__item:nth-child(2) {
+   padding-left: 88px;
    width: calc(100% - 268px);
 }
 .trade-notes__title {
@@ -801,8 +805,16 @@ img[loading=lazy] {
    color: #FF0871;
 }
 .trade-notes__content {
-   padding-bottom: 42px;
+   min-height: 100%;
+   max-width: 237px;
+   padding-bottom: 3px;
    padding-top: 42px;
+}
+.trade-notes.there-are-blocks .trade-notes__content {
+   align-items: flex-start;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
 }
 .trade-notes__content p {
    color: #fff;
@@ -810,7 +822,7 @@ img[loading=lazy] {
    font-size: 14px;
    font-weight: 400;
    line-height: 22px;
-   max-width: 209px;
+   /*max-width: 209px;*/
 }
 .trade-notes__content p span {
    color: #FF0871;
@@ -852,9 +864,182 @@ img[loading=lazy] {
    background-color: #6710FF;
    border-color: #6710FF;
 }
+.trade-notes form {
+   border: 1px solid #DBDBDB;
+   border-radius: 5px;
+   display: flex;
+   height: 32px;
+   margin: 24px 0 18px;
+   width: 100%;
+}
+.trade-notes form input {
+   background: none;
+   height: 100%;
+   outline: none;
+}
+.trade-notes form input:not([type=submit]) {
+   color: #fff;
+   font-family: "Mona Sans", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 22px;
+   padding-bottom: 1px;
+   padding-left: 12px;
+   padding-right: 12px;
+   width: calc(100% - 31px);
+}
+.trade-notes form input[type=submit] {
+   background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0_2028_40927)'%3e%3cpath d='M15.1003 14.9904L10.4628 10.3529C11.1824 9.42252 11.5717 8.28502 11.5717 7.08859C11.5717 5.65645 11.0128 4.31359 10.0021 3.30109C8.99135 2.28859 7.64492 1.73145 6.21456 1.73145C4.78421 1.73145 3.43778 2.29037 2.42706 3.30109C1.41456 4.3118 0.857422 5.65645 0.857422 7.08859C0.857422 8.51895 1.41635 9.86537 2.42706 10.8761C3.43778 11.8886 4.78242 12.4457 6.21456 12.4457C7.41099 12.4457 8.54671 12.0564 9.47707 11.3386L14.1146 15.9743C14.1282 15.9879 14.1443 15.9987 14.1621 16.0061C14.1799 16.0134 14.1989 16.0172 14.2181 16.0172C14.2374 16.0172 14.2564 16.0134 14.2742 16.0061C14.292 15.9987 14.3081 15.9879 14.3217 15.9743L15.1003 15.1975C15.1139 15.1839 15.1247 15.1678 15.132 15.15C15.1394 15.1322 15.1432 15.1132 15.1432 15.0939C15.1432 15.0747 15.1394 15.0557 15.132 15.0379C15.1247 15.0201 15.1139 15.004 15.1003 14.9904ZM9.04314 9.91716C8.28599 10.6725 7.28242 11.0886 6.21456 11.0886C5.14671 11.0886 4.14314 10.6725 3.38599 9.91716C2.63064 9.16002 2.21456 8.15645 2.21456 7.08859C2.21456 6.02073 2.63064 5.01537 3.38599 4.26002C4.14314 3.50466 5.14671 3.08859 6.21456 3.08859C7.28242 3.08859 8.28778 3.50287 9.04314 4.26002C9.79849 5.01716 10.2146 6.02073 10.2146 7.08859C10.2146 8.15645 9.79849 9.1618 9.04314 9.91716Z' fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0_2028_40927'%3e%3crect width='16' height='16' fill='white' transform='translate(0 0.87207)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
+   background-repeat: no-repeat;
+   background-position: 50% 45%;
+   background-size: 52%;
+   border: none;
+   border-left: 1px solid #DBDBDB;
+   font-size: 0;
+   padding: 0;
+   width: 31px;
+}
+.tabs__wrap-tab {
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 -5.5px 19px;
+}
+.tabs__wrap-tab .tab {
+   background-color: #353535;
+   border-radius: 32px;
+   color: #fff;
+   cursor: pointer;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 100%;
+   margin: 5.5px;
+   min-width: 62px;
+   padding: 11px 12px;
+   text-align: center;
+}
+.tabs__wrap-tab .tab.tab-active {
+   background-color: #EB0065;
+}
+.tabContent {
+   display: none;
+   overflow: hidden;
+}
+.tabContent.content-active {
+   display: block;
+}
+.trade-notes__item .tabs__tabContents {
+   padding-top: 42px;
+}
+.trade-notes__item .swiper-slide {
+   height: auto;
+}
+.trade-notes__slideBlock {
+   padding: 22px 33px 20px;
+}
+.trade-notes__item .swiper-slide.two-blocks {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.trade-notes__item .swiper-slide.two-blocks .trade-notes__slideBlock {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.trade-notes__item .swiper-slide.two-blocks .trade-notes__slideBlock:not(:last-child) {
+   margin-bottom: 7px;
+}
+.trade-notes__item .swiper-conteiner {
+   margin-right: -20px;
+   padding-right: 20px;
+}
+.trade-notes__slideBlock {
+   border: 2px solid rgba(255, 255, 255, 0.4);
+   border-radius: 48px;
+   padding: 37px 34px 30px;
+   width: 100%;
+}
+.trade-notes__slideBlock .wrap-text p {
+   color: #fff;
+   font-family: "Gabarito", sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 22px;
+}
+.trade-notes__slideBlock .wrap-text:not(.with-serifs)  {
+   padding-top: 21px;
+}
+.trade-notes__slideBlock .wrap-text.with-serifs p:not(:last-child) {
+   font-family: "Gilda Display", serif;
+   font-weight: 400;
+   line-height: 18px;
+}
+.trade-notes__slideBlock .wrap-text.with-serifs p:last-child {
+   color: rgba(255, 255, 255, 0.6);
+   font-family: "Poppins", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 100%;
+   margin: 0;
+}
+.trade-notes__slideBlock .wrap-text.with-serifs p:last-child::before {
+   background-color: #616161;
+   content: '';
+   display: block;
+   height: 2px;
+   margin: 7px 0 6px;
+   width: 35px;
+}
+.trade-notes__slideBlock .link {
+   border-radius: 50%;
+   display: block;
+   height: 33px;
+   overflow: hidden;
+   margin: 4px 0 0 auto;
+   padding: 1px;
+   width: 33px;
+}
+.trade-notes__slideBlock .link img,
+.trade-notes__slideBlock .link svg {
+   max-height: 100%;
+   max-width: 100%;
+}
+.trade-notes__wrap-tabs-pagination {
+   margin-top: auto;
+}
+.trade-notes__pagination {
+   align-items: center;
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: 20.93px;
+   height: 32px;
+   display: flex;
+   max-width: 100%;
+   padding: 0 10px;
+   position: static;
+   width: auto !important;
+}
+.trade-notes__pagination.swiper-pagination-lock {
+   display: none;
+}
+.trade-notes__pagination .swiper-pagination-bullet {
+   background: rgba(255, 255, 255, 0.4);
+   height: 13px;
+   opacity: 1;
+   margin: 2px !important;
+   width: 13px;
+}
+.trade-notes__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+   background: rgba(255, 255, 255, 1);
+}
 
+@media (max-width: 1599px) {
 
-
+   .trade-notes__item:nth-child(2) {
+      padding-left: 10px;
+   }
+}
 @media (max-width: 1200px) {
 
    .books-page {
@@ -1014,6 +1199,9 @@ img[loading=lazy] {
 
    .trade-notes .container {
       padding-bottom: 58px;
+   }
+   .trade-notes__item:nth-child(2) {
+      padding-left: 0;
    }
 }
 @media (max-width: 767px) {
@@ -1392,20 +1580,52 @@ img[loading=lazy] {
    .trade-notes .container {
       padding-bottom: 349px;
    }
-   .trade-notes__illustration {
-      max-width: 100%;
+   .trade-notes.there-are-blocks .container {
+      padding-bottom: 33px;
    }
    .trade-notes__item:nth-child(1) ,
    .trade-notes__item:nth-child(2) {
       width: 100%;
    }
+   .trade-notes__content {
+      max-width: 100%;
+   }
    .trade-notes__content p {
       max-width: 100%;
    }
+   .trade-notes.there-are-blocks .trade-notes__content {
+      min-height: auto;
+   }
+   .trade-notes form {
+      margin: 22px 0 6px;
+   }
+   .tabs__wrap-tab {
+      justify-content: space-between;
+      width: calc(100% + 11px);
+   }
+   .tabs__wrap-tab .tab {
+      min-width: 85px;
+      padding: 11px 25px;
+   }
    .trade-notes__illustration {
       bottom: 21px;
+      max-width: 100%;
       right: 50%;
       transform: translateX(50%);
+   }
+   .trade-notes.there-are-blocks .trade-notes__content {
+      padding-bottom: 0;
+   }
+   .trade-notes.there-are-blocks .tabs__tabContents {
+      padding-top: 0;
+   }
+   .tabContent {
+      overflow: visible;
+   }
+   .trade-notes__pagination {
+      display: table;
+      margin: 16px auto 0;
+      padding: 6px 10px 0;
    }
 
    .start-trading-today {

@@ -34,6 +34,28 @@ setEqualHeight();	// Initialization on page load
 window.addEventListener('resize', setEqualHeight);	// Adding a handler for window resizing
 window.addEventListener('orientationchange', setEqualHeight); // Adding a handler for screen orientation change (for mobile devices)
 
+// Tabs
+document.querySelectorAll('.tabs__wrap-tab .tab').forEach(function (tab) {
+   tab.addEventListener('click', function () {
+      const tabId = this.getAttribute('data-tab');
+
+      // Снимаем активность со всех кнопок
+      document.querySelectorAll('.tabs__wrap-tab .tab').forEach(t => t.classList.remove('tab-active'));
+
+      // Активируем нажатую кнопку
+      this.classList.add('tab-active');
+
+      // Убираем активность у всех блоков с контентом
+      document.querySelectorAll('.tabContent').forEach(c => c.classList.remove('content-active'));
+
+      // Активируем только те блоки, у которых совпадает data-tabcontent
+      document.querySelectorAll('.tabContent[data-tabcontent="' + tabId + '"]').forEach(c => {
+         c.classList.add('content-active');
+      });
+   });
+});
+
+
 // Scroll to top
 const btnToTop = document.getElementById('btn-to-top');
 btnToTop.addEventListener('click', function() {

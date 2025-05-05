@@ -64,6 +64,42 @@ if (booksTopSlider) {
    });
 }
 
+// Books top slider
+function initializeBookBlocksSlider(slidersliderBookBlocksId, BookBlocksPaginationId) {
+   const sliderBookBlocks = document.getElementById(slidersliderBookBlocksId);
+   if (sliderBookBlocks) {
+      new Swiper(sliderBookBlocks, {
+         pagination: {
+            el: `#${BookBlocksPaginationId}`,
+            clickable: true,
+         },
+         autoHeight: false,
+         slidesPerView: 3,
+         slidesPerGroup: 1,
+         watchOverflow: true,
+         spaceBetween: 24,
+         loop: false,
+         speed: 800,
+         effect: 'slide',
+         breakpoints: {
+            320: {
+               slidesPerView: 1.236,
+               spaceBetween: 20,
+            },
+            576: {
+               slidesPerView: 1,
+            },
+            861: {
+               slidesPerView: 2,
+            },
+            1161: {
+               slidesPerView: 3,
+            }
+         },
+      });
+   }
+}
+
 // Books
 function initializeBookSlider(sliderBookId, prevBookBtnId, nextBookBtnId) {
    const sliderBook = document.getElementById(sliderBookId);
