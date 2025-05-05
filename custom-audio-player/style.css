@@ -1,0 +1,173 @@
+.audio-player {
+   align-items: center;
+   font-family: sans-serif;
+   background: #1e1e1e;
+   border-radius: 12px;
+   color: #fff;
+   display: flex;
+   padding: 10px;
+}
+ 
+/* Минимальный */
+.audio-player--mini {
+   margin-top: 16px;
+   padding: 10px 14px;
+   width: 100%;
+}
+.audio-player.audio-player--mini.playing .audio-player__play {
+   background: #00b4b4 url("data:image/svg+xml;charset=UTF-8,%3csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.2666 1.3096C2.2666 0.757316 1.81889 0.309601 1.2666 0.309601C0.714317 0.309601 0.266602 0.757316 0.266602 1.3096V10.0478C0.266602 10.6001 0.714317 11.0478 1.2666 11.0478C1.81889 11.0478 2.2666 10.6001 2.2666 10.0478V1.3096ZM6.45708 1.3096C6.45708 0.757316 6.00936 0.309601 5.45708 0.309601C4.90479 0.309601 4.45708 0.757316 4.45708 1.3096V10.0478C4.45708 10.6001 4.90479 11.0478 5.45708 11.0478C6.00936 11.0478 6.45708 10.6001 6.45708 10.0478V1.3096Z' fill='white'/%3e%3c/svg%3e");
+   background-repeat: no-repeat;
+   background-position: 53% 50%;
+   background-size: 25%;
+}
+.audio-player__play {
+   align-items: center;
+   background: #00b4b4 url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='26' viewBox='0 0 24 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M20.0892 12.9023L3.69479 3.39163V22.413L20.0892 12.9023ZM22.3264 10.9363C22.6727 11.1346 22.9604 11.4208 23.1606 11.7661C23.3607 12.1113 23.4662 12.5033 23.4662 12.9023C23.4662 13.3014 23.3607 13.6933 23.1606 14.0386C22.9604 14.3838 22.6727 14.67 22.3264 14.8683L4.35294 25.297C2.88411 26.15 0.870117 25.1755 0.870117 23.331V2.47361C0.870117 0.629101 2.88411 -0.345412 4.35294 0.507639L22.3264 10.9363Z' fill='white'/%3e%3c/svg%3e");
+   background-repeat: no-repeat;
+   background-position: 60% 50%;
+   border-radius: 50%;
+   cursor: pointer;
+   height: 60px;
+   display: flex;
+   justify-content: center;
+   margin-right: 15px;
+   width: 60px;
+}
+.audio-player__title {
+   font-family: "Gabarito", sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   line-height: 22px;
+   margin: 0 0 5px 2px;
+}
+.audio-player__progress {
+   align-items: center;
+   display: flex;
+}
+.audio-player__progress-bar {
+   background-color: #333;
+   border-radius: 4px;
+   cursor: pointer;
+   height: 4px;
+   position: relative;
+   width: calc(100% - 44px);
+}
+.audio-player__progress-fill {
+   background-color: #00b4b4;
+   border-radius: inherit;
+   height: 100%;
+}
+.audio-player__duration {
+   color: #00B0BC;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 22px;
+   padding-left: 6px;
+   width: 44px;
+}
+.audio-player__info {
+   flex: 1;
+}
+
+
+ 
+ /* Расширенный */
+ .audio-player--full {
+   flex-direction: column;
+   width: 100%;
+   padding: 15px;
+ }
+ 
+ .audio-player__controls {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   margin: 10px 0;
+ }
+ 
+ .audio-player__btn {
+   background: transparent;
+   border: none;
+   color: white;
+   font-size: 14px;
+   cursor: pointer;
+ }
+ 
+ .audio-player__btn.play {
+   background: #00b4b4;
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+   font-size: 18px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+
+ 
+ .audio-player__progress-fill {
+   height: 100%;
+   width: 0;
+   background: #00b4b4;
+ }
+ 
+ .audio-player__time {
+   font-size: 12px;
+   color: #aaa;
+ }
+ 
+ .audio-player__time--start {
+   align-self: flex-start;
+ }
+ 
+ .audio-player__time--end {
+   align-self: flex-end;
+ }
+
+
+@media (max-width: 960px) {
+
+   .audio-player__play {
+      background-position: 60% 55%;
+      background-size: 44%;
+      height: 48px;
+      width: 48px;
+   }
+   .audio-player.audio-player--mini.playing .audio-player__play {
+      background-position: 52% 58%;
+      background-size: 28%;
+   }
+}
+@media (max-width: 640px) {
+
+   .audio-player--mini {
+      margin: 16px auto 0;
+      width: 280px;
+   }
+}
+@media (max-width: 575px) {
+
+   .audio-player--mini {
+      margin-top: 10px;
+      padding: 9px 0 9px 13px;
+   }
+   .audio-player__play {
+      background-position: 59% 55%;
+      background-size: 40%;
+      height: 38px;
+      width: 38px;
+   }
+   .audio-player__title {
+      font-size: 14px;
+      margin: 0 0 4px 1px;
+   }
+   .audio-player__duration {
+      font-size: 12px;
+      line-height: 21px;
+      padding-left: 7px;
+      width: 40px;
+   }
+}
