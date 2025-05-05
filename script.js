@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
    function updateActiveClasses() {
       let currentSection = "";
       sections.forEach((section) => {
-         const sectionTop = section.offsetTop;
+         const sectionTop = section.offsetTop - 30;
          if (scrollContainer.scrollTop >= sectionTop) {
             currentSection = section.getAttribute('data-title');
          }
