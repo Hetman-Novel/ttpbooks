@@ -1068,6 +1068,7 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
 }
 .champer-page__item {
    min-height: 100%;
+   position: relative;
 }
 .champer-page__item:nth-child(1) {
    width: 332px;
@@ -1079,15 +1080,220 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    background-color: #1E1E1E;
    border-radius: 8px;
    height: 100%;
-   padding: 17px 20px;
+   padding: 17px 20px 0;
+   position: relative;
    width: 100%;
 }
 .champer-page__item .tabContent {
-   height: calc(100vh - 81px - 197px - 19px - 110px);
+   height: calc(100vh - 81px - 163px - 19px - 110px);
+   /*height: calc(100vh - 81px - 180px - 19px - 110px);*/
+   margin-right: -13px;
+   padding-right: 9px;
    padding-top: 7px;
+}
+.champer-page__if-not-authorized {
+   padding-top: 1px;
+}
+.champer-page__if-not-authorized img {
+   display: table;
+   margin: 0 auto 25px;
+}
+.champer-page__if-not-authorized p {
+   color: #fff;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 17px;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 222px;
+   text-align: center;
+}
+.champer-page__if-not-authorized p.color {
+   color: #FF0871;
+   font-size: 16px;
+   font-weight: 700;
+   margin-bottom: 5px;
+}
+.champer-page__if-not-authorized .link {
+   background-color: #353535;
+   border-radius: 5px;
+   height: 32px;
+   width: 128px;
+}
+.champer-page__if-not-authorized .link {
+   align-items: center;
+   background-color: #353535;
+   border-radius: 5px;
+   color: #fff;
+   display: flex;
+   justify-content: center;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 22px;
+   height: 32px;
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 8px;
+   padding-right: 8px;
+   text-align: center;
+   width: 128px;
+}
+.champer-page__if-not-authorized .link.color {
+   background-color: #6710FF;
+   margin-top: 31px;
+}
+.champer-page__if-not-authorized .link:not(:last-child) {
+   margin-bottom: 12px;
+}
+.champer-page__bodyBlockDelete {
+   background: rgba(0, 0, 0, 0.4);
+   bottom: 0;
+   left: 0;
+   height: 100%;
+   position: absolute;
+   right: 0;
+   top: 0;
+   transition: 0.3s ease 0s;
+   width: 100%;
+   z-index: 2;
+}
+.champer-page__bodyBlockDelete:not(.show) {
+   opacity: 0;
+   pointer-events: none;
+   visibility: hidden;
+}
+.champer-page__blockDelete {
+   background-color: #1E1E1E;
+   border: 1px solid #000;
+   border-radius: 16px;
+   left: 20px;
+   padding: 32px 20px 23px;
+   position: absolute;
+   top: 119px;
+   width: calc(100% - 40px);
+}
+.champer-page__blockDelete img {
+   display: table;
+   margin: 0 auto 42px;
+}
+.champer-page__blockDelete p {
+   color: #fff;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 17px;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 170px;
+   text-align: center;
+}
+.champer-page__blockDelete p.color {
+   color: #FF0871;
+   font-size: 16px;
+   font-weight: 700;
+   margin-bottom: 5px;
+}
+.champer-page__blockDelete .link {
+   background-color: #353535;
+   border-radius: 5px;
+   height: 32px;
+   width: 128px;
+}
+.champer-page__blockDelete .link {
+   align-items: center;
+   background-color: #353535;
+   border-radius: 5px;
+   color: #fff;
+   display: flex;
+   justify-content: center;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 22px;
+   height: 32px;
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 8px;
+   padding-right: 8px;
+   text-align: center;
+   width: 128px;
+}
+.champer-page__blockDelete .link.color {
+   background-color: #6710FF;
+   margin-top: 31px;
+}
+.champer-page__blockDelete .link:not(:last-child) {
+   margin-bottom: 12px;
+}
+.champer-page__blockText {
+   border: 2px solid rgba(255, 255, 255, 0.4);
+   border-radius: 48px;
+   padding: 37px 33px 27px;
+   width: 100%;
+}
+.champer-page__blockText.bg-color {
+   background-color: rgba(255, 255, 255, 0.12);
+}
+.champer-page__blockText:not(:last-child) {
+   margin-bottom: 18px;
+}
+.champer-page__blockText .wrap-text p {
+   color: #fff;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 18px;
+}
+.champer-page__blockText .wrap-text:not(.with-serifs) {
+   padding-top: 21px;
+}
+.champer-page__blockText .wrap-text.with-serifs p:nth-child(1) {
+   color: #E6E6E6;
+   font-family: "Gilda Display", sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 17px;
+}
+.champer-page__blockText .wrap-text.with-serifs p:nth-child(2) {
+   color: #B0B0B0;
+   font-family: "Poppins", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 100%;
+}
+.champer-page__blockText .wrap-text.with-serifs p:nth-child(2)::before {
+   background-color: rgba(255, 255, 255, 0.6);
+   content: '';
+   display: block;
+   height: 1px;
+   margin: 7px 0 6px;
+   width: 35px;
+}
+.champer-page__blockText .wrap-buttons {
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 5px;
+}
+.champer-page__blockText .wrap-buttons .link {
+   border-radius: 50%;
+   height: 33px;
+   overflow: hidden;
+   padding: 1px;
+   width: 33px;
+}
+.champer-page__blockText .wrap-buttons .link svg,
+.champer-page__blockText .wrap-buttons .link img {
+   max-height: 100%;
+   max-width: 100%;
+}
+.champer-page__blockText .wrap-buttons .link:not(:first-child) {
+   margin-left: 12px;
 }
 .champer-page__item .tabs__wrap-tab {
    justify-content: space-between;
+   margin-bottom: -17px !important;
 }
 .champers__list li {
    color: #fff;
@@ -1152,10 +1358,11 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
 .champer-page__number-of-words {
    color: rgba(255, 255, 255, 0.5);
    font-family: "Gabarito", sans-serif;
-   font-size: 12px;
-   font-weight: 400;
-   line-height: 100%;
-   text-align: right;
+   font-size: 12px !important;
+   line-height: 100% !important;
+   position: relative;
+   top: 11px;
+   text-align: right !important;
 }
 .champer-page__number-of-words span {
    color: rgba(255, 255, 255, 1);
@@ -1175,6 +1382,193 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    line-height: 18px;
    margin-bottom: 24px;
    text-align: justify;
+}
+.champer-page__blockToSelectAcolorWhenSelecting {
+   background-color: #1E1E1E;
+   border-radius: 8px;
+   box-shadow: 6px 15px 25px 0px rgba(0, 0, 0, 0.8);
+   bottom: 0;
+   left: 52px;
+   padding: 20px 24px;
+   position: absolute;
+   right: 52px;
+   transition: 0.3s ease 0s;
+   width: calc(100% - 104px);
+}
+.champer-page__blockToSelectAcolorWhenSelecting:not(.show) {
+   opacity: 0;
+   pointer-events: none;
+   visibility: hidden;
+}
+.champer-page__blockToSelectAcolorWhenSelecting h3 {
+   color: #fff;
+   font-family: "Gabarito", sans-serif;
+   font-size: 24px;
+   font-weight: 400;
+   line-height: 115%;
+   margin-bottom: 14px;
+}
+.champer-page__blockToSelectAcolorWhenSelecting p {
+   color: #fff;
+   font-family: "Gilda Display", serif;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 115%;
+   text-align: justify;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors {
+   margin: 12px 0 6px;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors input {
+   border-radius: 50%;
+   cursor: pointer;
+   height: 29px;
+   overflow: hidden;
+   padding: 1px;
+   position: relative;
+   width: 29px;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors input:not(:last-child) {
+   margin-right: 4px;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors input::after {
+   border: 2px solid transparent;
+   border-radius: 50%;
+   bottom: 0;
+   content: '';
+   left: 0;
+   display: block;
+   height: 100%;
+   pointer-events: none;
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 100%;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors input.vivid-pink::after {
+   background-color: #FF0871;
+   border-color: #FF0871;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors input.strong-cyan::after {
+   background-color: #00B0BC;
+   border-color: #00B0BC;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors input.dark-moderate-violet::after {
+   background-color: #6F3997;
+   border-color: #6F3997;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors input.strong-yellow::after {
+   background-color: #D2AB00;
+   border-color: #D2AB00;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-radio-colors input:checked:after {
+   border-color: #fff;
+}
+.champer-page__blockToSelectAcolorWhenSelecting textarea {
+   border: 1px solid #DBDBDB;
+   background-color: #1E1E1E;
+   border-radius: 5px;
+   color: rgba(255, 255, 255, 0.25);
+   font-family: "Mona Sans", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 22px;
+   height: 52px;
+   padding: 4px 11px;
+   width: 100%;
+}
+.champer-page__blockToSelectAcolorWhenSelecting textarea::placeholder {
+   color: rgba(255, 255, 255, 0.25);
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-buttons {
+   align-items: center;
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 3px;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-buttons p.notify {
+   margin-right: auto;
+   transition: 0.3s ease 0s;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-buttons p.notify:not(.show) {
+   opacity: 0;
+   visibility: hidden;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-buttons .button {
+   align-items: center;
+   background-color: #353535;
+   border-radius: 5px;
+   color: #fff;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 22px;
+   display: flex;
+   justify-content: center;
+   height: 32px;
+   min-width: 61px;
+   padding-left: 8px;
+   padding-right: 8px;
+   text-align: center;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-buttons .button.save {
+   background-color: #6710FF;
+}
+.champer-page__blockToSelectAcolorWhenSelecting .wrap-buttons .button:not(:first-child) {
+   margin-left: 10px;
+}
+
+.js-change-selection-color.vivid-pink .champer-page__blockToSelectAcolorWhenSelecting p span,
+.js-change-selection-color.vivid-pink ::selection {
+   background-color: #FF0871;
+}
+.js-change-selection-color.strong-cyan .champer-page__blockToSelectAcolorWhenSelecting p span,
+.js-change-selection-color.strong-cyan ::selection {
+   background-color: #00B0BC;
+}
+.js-change-selection-color.dark-moderate-violet .champer-page__blockToSelectAcolorWhenSelecting p span,
+.js-change-selection-color.dark-moderate-violet ::selection {
+   background-color: #6F3997;
+}
+.js-change-selection-color.strong-yellow .champer-page__blockToSelectAcolorWhenSelecting p span,
+.js-change-selection-color.strong-yellow ::selection {
+   background-color: #D2AB00;
+}
+.selection-actions {
+   background-color: #4B4B4B;
+   border: 1px solid #DBDBDB;
+   border-radius: 8px;
+   height: 42px;
+   padding: 7px 12px 9px;
+}
+.selection-actions button {
+   background: transparent;
+   border-radius: 50px;
+   color: #fff;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 13px;
+   padding: 6px 7px;
+   position: relative;
+   transition: 0.3s ease 0s;
+}
+.selection-actions button:hover {
+   background: rgba(255, 255, 255, 0.4);
+}
+.selection-actions button:not(:last-child) {
+   margin-right: 22px;
+}
+.selection-actions button:not(:last-child)::after {
+   background-color: #A5A5A5;
+   content: '';
+   display: block;
+   height: 27px;
+   position: absolute;
+   right: -14px;
+   transform: translateY(-50%);
+   top: 50%;
+   width: 2px;
 }
 
 @media (max-width: 1599px) {
@@ -1346,6 +1740,17 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    .trade-notes__item:nth-child(2) {
       padding-left: 0;
    }
+
+   .champer-page__item:nth-child(1) {
+      width: 300px;
+   }
+   .champer-page__item:nth-child(2) {
+      width: calc(100% - 300px);
+   }
+   .champer-page__content {
+      padding-left: 30px;
+      padding-right: 10px;
+   }
 }
 @media (max-width: 767px) {
 
@@ -1419,6 +1824,152 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    }
    .book-fs__wrap-info p {
       margin: 15px 0 0;
+   }
+
+   .champer-page__item:nth-child(1) {
+      display: none;
+   }
+   .champer-page__item:nth-child(2) {
+      width: 100%;
+   }
+   .champer-page__content {
+      padding-left: 0;
+      padding-right: 0;
+   }
+   body.page-template-champers-single .champer-page__content, 
+   body.page-template-champers-single .champer-page__items {
+      height: auto;
+   }
+   body.page-template-champers-single {
+      overflow: auto;
+   }
+
+   .champer-page__buttonMenu {
+      background-color: #1E1E1E;
+      border-radius: 50px;
+      height: 44px;
+      position: fixed;
+      right: 15px;
+      transition: 0.3s ease 0s;
+      transform: translateY(-50%);
+      top: 50%;
+      width: 44px;
+      z-index: 50;
+   }
+   .champer-page__buttonMenu.active {
+      background-color: #FF0871;
+   }
+   .champer-page__buttonMenu > span {
+      background-color: #EB0065;
+      border-radius: 10px;
+      color: #fff;
+      font-family: "Gabarito", sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 100%;
+      padding: 3px 5px;
+      pointer-events: none;
+      position: absolute;
+      right: 8px;
+      transform: translate(50%, -50%);
+      top: 3px;
+   }
+   .champer-page__buttonMenu .button {
+      align-items: center;
+      background-color: #37373B;
+      box-shadow: 1px 5px 4px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      bottom: 55px;
+      height: 34px;
+      display: flex;
+      padding: 3px 17px;
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      transition: 0.3s ease 0s;
+      visibility: hidden;
+      width: 223px;
+      z-index: 48;
+   }
+   .champer-page__buttonMenu.active .button.chapters,
+   .champer-page__buttonMenu.active .button.notes,
+   .champer-page__buttonMenu.active .button.search,
+   .champer-page__buttonMenu.active .button.setting {
+      opacity: 1;
+      visibility: visible;
+   }
+   .champer-page__buttonMenu.active .button.chapters {
+      bottom: 193px;
+      transition: 0.2s ease 0.3s;
+   }
+   .champer-page__buttonMenu.active .button.notes {
+      bottom: 147px;
+      transition: 0.2s ease 0.2s;
+   }
+   .champer-page__buttonMenu.active .button.search {
+      bottom: 101px;
+      transition: 0.2s ease 0.1s;
+   }
+   .champer-page__buttonMenu.active .button.setting {
+      transition: 0.2s ease 0s;
+   }
+   .champer-page__buttonMenu .button.chapters {
+      transition: 0.2s ease 0s;
+   }
+   .champer-page__buttonMenu .button.notes {
+      transition: 0.2s ease 0.1s;
+   }
+   .champer-page__buttonMenu .button.search {
+      transition: 0.2s ease 0.2s;
+   }
+   .champer-page__buttonMenu .button.setting {
+      bottom: 55px;
+      transition: 0.2s ease 0.3s;  
+   }
+   .champer-page__buttonMenu .button p { 
+      align-items: center;
+      color: #fff;
+      font-family: "Mona Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px; 
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+   }
+   .champer-page__buttonMenu .button p img,
+   .champer-page__buttonMenu .button p svg,
+   .champer-page__buttonMenu .button p span {
+      padding-left: 5px;
+      pointer-events: none;
+      text-align: right;
+   }
+   .champer-page__blockToSelectAcolorWhenSelecting {
+      bottom: 15px;
+      left: 15px;
+      position: fixed;
+      right: 15px;
+      width: calc(100% - 30px);
+   }
+   .champer-page__bottomWrapPlaeer {
+      bottom: 0;
+      position: fixed !important;
+      z-index: 1;
+   }
+   .back-link-top-page {
+      left: 0;
+      position: absolute;
+      top: 0;
+   }
+   .champer-page__name {
+      margin-top: 48px;
+      padding-right: 0;
+      text-align: center !important;
+   }
+   .champer-page__number-of-words {
+      position: absolute;
+      right: 7px;
+      top: 19px;
    }
 }
 @media (max-width: 720px) {
