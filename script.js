@@ -105,10 +105,19 @@ document.addEventListener('DOMContentLoaded', function () {
    const scrollContainer = document.querySelector('.champer-page__content');
    const elements = document.querySelectorAll('[data-name]');
    const sections = document.querySelectorAll('[data-title]');
+
+   customOffsetTop = 30;
+   if (window.matchMedia("(max-width: 767px)").matches) {
+      customOffsetTop = 41;
+   }
+   if (window.matchMedia("(max-width: 575px)").matches) {
+      customOffsetTop = 72;
+   }
+
    function updateActiveClasses() {
       let currentSection = "";
       sections.forEach((section) => {
-         const sectionTop = section.offsetTop - 30;
+         const sectionTop = section.offsetTop - customOffsetTop;
          if (scrollContainer.scrollTop >= sectionTop) {
             currentSection = section.getAttribute('data-title');
          }
@@ -124,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
          const target = document.querySelector(`[data-title="${name}"]`);
          if (target) {
             scrollContainer.scrollTo({
-               top: target.offsetTop - 30,
+               top: target.offsetTop - customOffsetTop,
                behavior: 'smooth'
             });
          }
@@ -312,6 +321,65 @@ document.addEventListener('DOMContentLoaded', function () {
    if (champerPageButtonMenu) {
       champerPageButtonMenu.addEventListener('click', () => {
          champerPageButtonMenu.classList.toggle('active');
+      });
+   }
+
+   // Block closing to 767
+   let champerPageBtnsBlockClose = document.querySelectorAll('.champer-page__btnBlockClose');
+   if (champerPageBtnsBlockClose.length > 0) {
+      champerPageBtnsBlockClose.forEach((champerPageBtnBlockClose) => {
+         champerPageBtnBlockClose.addEventListener('click', () => {
+            champerPageBtnBlockClose.parentNode.parentNode.classList.remove('show');
+         });
+      });
+   }
+
+   // Показ блока ChampersList до 767
+   let buttonShowBlockChaptersList = document.getElementById('button-show-block-chapters-list');
+   if (buttonShowBlockChaptersList) {
+      let blockChampersList = document.getElementById('block-champers-list');
+
+      if (blockChampersList) {
+         buttonShowBlockChaptersList.addEventListener('click', (e) => {
+            e.preventDefault();
+            blockChampersList.classList.toggle('show');
+         });
+      }
+   }
+
+   // Показ блока WithTabs до 767
+   let buttonShowBlockWithTabs = document.getElementById('button-show-block-with-tabs');
+   if (buttonShowBlockWithTabs) {
+      let blockTabs = document.getElementById('block-tabs');
+
+      if (blockTabs) {
+         buttonShowBlockWithTabs.addEventListener('click', (e) => {
+            e.preventDefault();
+            blockTabs.classList.toggle('show');
+         });
+      }
+   }
+
+   // Показ блока WithTabs (с поиском) до 767
+   let buttonShowBlockSearch = document.getElementById('button-show-block-search');
+   if (buttonShowBlockSearch) {
+      let blockSearch = document.getElementById('block-search');
+
+      if (blockSearch) {
+         buttonShowBlockSearch.addEventListener('click', (e) => {
+            e.preventDefault();
+            blockSearch.classList.toggle('show');
+         });
+      }
+   }
+
+   // Спрятать блока ChampersList до 767 по клику на любой элемент списка
+   let champerPageBlockChampersListsLi = document.querySelectorAll('.champer-page__blockChampersList .champers__list li');
+   if (champerPageBlockChampersListsLi.length > 0) {
+      champerPageBlockChampersListsLi.forEach((champerPageBlockChampersListLi) => {
+         champerPageBlockChampersListLi.addEventListener('click', () => {
+            champerPageBlockChampersListLi.parentNode.parentNode.classList.remove('show');
+         })
       });
    }
 });

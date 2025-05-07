@@ -773,13 +773,13 @@ src="https://www.facebook.com/tr?id=467617928712737&ev=PageView&noscript=1" />
 	<div class="champer-page__buttonMenu">
 		<span>123</span>
 		<img src="images/svg/champer-page-button-menu-icon.svg" alt="">
-		<a href="#" class="button chapters">
+		<a href="#" class="button chapters" id="button-show-block-chapters-list">
 			<p>Chapters <span>6</span></p>
 		</a>
-		<a href="#" class="button notes">
+		<a href="#" class="button notes" id="button-show-block-with-tabs">
 			<p>Notes & Bookmarks <span>124</span></p>
 		</a>
-		<a href="#" class="button search">
+		<a href="#" class="button search" id="button-show-block-search">
 			<p>Search Book <img src="images/svg/champer-page-button-menu-search-icon.svg" alt=""></p>
 		</a>
 		<a href="#" class="button setting">
@@ -794,10 +794,298 @@ src="https://www.facebook.com/tr?id=467617928712737&ev=PageView&noscript=1" />
    </div>
 </div>
 
+<!-- mobite/tablet -> -->
+<div id="block-champers-list" class="champer-page__blockChampersList">
+   <div class="champer-page__blockChampersListHead">
+      <div class="wrapCover">
+         <img src="images/books/book-cover-for-fs.jpg" alt="">
+      </div>
+      <p>
+         Reminiscences Of A Stock Operator
+         <br>
+         <span>by Edwin Lefèvre</span>
+      </p>
+      <button type="button" class="champer-page__btnBlockClose">
+         <img src="images/svg/champer-page-btn-block-close-icon.svg" alt="">
+      </button>
+   </div>
+   <div class="book__wrap-search-form">
+      <form>
+         <input type="text" placeholder="Input">
+         <input type="submit">
+      </form>
+   </div>
+   <ul class="champers__list">
+      <li data-name="chapter-i" class="active">Chapter I</li>
+      <li data-name="chapter-ii">Chapter II</li>
+      <li data-name="chapter-iii">Chapter III</li>
+      <li data-name="chapter-iv">Chapter IV</li>
+      <li data-name="chapter-v">Chapter V</li>
+      <li data-name="chapter-vi">Chapter VI</li>
+      <li data-name="chapter-vii">Chapter VII</li>
+      <li data-name="chapter-viii">Chapter VIII</li>
+      <li data-name="chapter-ix">Chapter IX</li>
+      <li data-name="chapter-x">Chapter X</li>
+      <li data-name="chapter-xi">Chapter XI</li>
+      <li data-name="chapter-xii">Chapter XII</li>
+      <li data-name="chapter-xiii">Chapter XIII</li>
+      <li data-name="chapter-xiv">Chapter XIV</li>
+      <li data-name="chapter-xv">Chapter XV</li>
+      <li data-name="chapter-xvi">Chapter XVI</li>
+      <li data-name="chapter-xvii">Chapter XVII</li>
+      <li data-name="chapter-xviii">Chapter XVIII</li>
+      <li data-name="chapter-xix">Chapter XIX</li>
+      <li data-name="chapter-xx">Chapter XX</li>
+      <li data-name="chapter-xxi">Chapter XXI</li>
+      <li data-name="chapter-xxii">Chapter XXII</li>
+      <li data-name="chapter-xxiii">Chapter XXIII</li>
+      <li data-name="chapter-xxiv">Chapter XXIV</li>
+   </ul>
+</div>
+
+<div id="block-tabs" class="champer-page__blockWithTabs">
+   <div class="champer-page__blockChampersListHead">
+      <div class="book__wrap-search-form">
+         <form>
+            <input type="text" placeholder="Input">
+            <input type="submit">
+         </form>
+      </div>
+      <button type="button" class="champer-page__btnBlockClose">
+         <img src="images/svg/champer-page-btn-block-close-icon.svg" alt="">
+      </button>
+   </div>
+   <div class="tabs__wrap-tab">
+      <div data-tab="tab-all" class="tab tab-active">All</div>
+      <div data-tab="tab-bookmarks" class="tab">Bookmarks</div>
+      <div data-tab="tab-notes" class="tab">Notes</div>
+   </div>
+   <div data-tabcontent="tab-all" class="tabContent content-active">
+      
+      <!--
+      <div class="block-with-notification">
+         <div class="wrap-icon">
+            <img src="images/svg/cosmopolitan-icon.svg" alt="">
+         </div>
+         <h4>
+            “Cosmopolitan”
+            <br>
+            <span>isn’t in the trading book</span>
+         </h4>
+         <p>ry another term or check for typos!</p>
+      </div>
+      -->
+      
+      <div class="wrap-slider-tab">
+         <div id="slider-blocks-1" class="swiper-conteiner">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <div class="trade-notes__slideBlock">
+                     <div class="wrap-text with-serifs">
+                        <p>“Of course I had my ups and downs, but was a winner on balance. However, the Cosmopolitan people were not satisfied with the awful handicap they had tacked on me, which should have been enough to beat anybody. They tried to double-cross me. They didn't get me. I escaped because of one of my hunches.”</p>
+                        <p>page 9</p>
+                     </div>
+                     <div class="wrap-text">
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis.</p>
+                     </div>
+                     <a href="#" class="link">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 0.5C24.5604 0.5 31.5 7.43959 31.5 16C31.5 24.5604 24.5604 31.5 16 31.5C7.43959 31.5 0.5 24.5604 0.5 16C0.5 7.43959 7.43959 0.5 16 0.5Z" stroke="white"/>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89022 22.0255C9.70627 21.8415 9.60677 21.5882 9.61362 21.3212C9.62047 21.0542 9.73309 20.7954 9.92673 20.6018L18.3857 12.1428L12.2737 12.301C12.0064 12.3078 11.7527 12.2082 11.5685 12.024C11.3843 11.8398 11.2847 11.5862 11.2916 11.3188C11.2984 11.0515 11.4112 10.7924 11.6051 10.5985C11.799 10.4047 12.0581 10.2919 12.3254 10.285L20.8676 10.066C21 10.0624 21.1305 10.085 21.2516 10.1325C21.3726 10.1799 21.4819 10.2513 21.5731 10.3426C21.6644 10.4338 21.7358 10.5431 21.7832 10.6641C21.8307 10.7852 21.8533 10.9157 21.8497 11.0481L21.6307 19.5903C21.6238 19.8576 21.5111 20.1167 21.3172 20.3106C21.1233 20.5045 20.8642 20.6173 20.5969 20.6241C20.3295 20.631 20.0759 20.5314 19.8917 20.3472C19.7075 20.163 19.6079 19.9093 19.6147 19.642L19.7729 13.53L11.3139 21.989C11.1203 22.1826 10.8615 22.2952 10.5945 22.3021C10.3275 22.3089 10.0742 22.2094 9.89022 22.0255Z" fill="white"/>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="trade-notes__slideBlock">
+                     <div class="wrap-text with-serifs">
+                        <p>“Of course I had my ups and downs, but was a winner on balance. However, the Cosmopolitan people were not satisfied with the awful handicap they had tacked on me, which should have been enough to beat anybody. They tried to double-cross me. They didn't get me. I escaped because of one of my hunches.”</p>
+                        <p>page 128</p>
+                     </div>
+                     <div class="wrap-text">
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis.</p>
+                     </div>
+                     <a href="#" class="link">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 0.5C24.5604 0.5 31.5 7.43959 31.5 16C31.5 24.5604 24.5604 31.5 16 31.5C7.43959 31.5 0.5 24.5604 0.5 16C0.5 7.43959 7.43959 0.5 16 0.5Z" stroke="white"/>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89022 22.0255C9.70627 21.8415 9.60677 21.5882 9.61362 21.3212C9.62047 21.0542 9.73309 20.7954 9.92673 20.6018L18.3857 12.1428L12.2737 12.301C12.0064 12.3078 11.7527 12.2082 11.5685 12.024C11.3843 11.8398 11.2847 11.5862 11.2916 11.3188C11.2984 11.0515 11.4112 10.7924 11.6051 10.5985C11.799 10.4047 12.0581 10.2919 12.3254 10.285L20.8676 10.066C21 10.0624 21.1305 10.085 21.2516 10.1325C21.3726 10.1799 21.4819 10.2513 21.5731 10.3426C21.6644 10.4338 21.7358 10.5431 21.7832 10.6641C21.8307 10.7852 21.8533 10.9157 21.8497 11.0481L21.6307 19.5903C21.6238 19.8576 21.5111 20.1167 21.3172 20.3106C21.1233 20.5045 20.8642 20.6173 20.5969 20.6241C20.3295 20.631 20.0759 20.5314 19.8917 20.3472C19.7075 20.163 19.6079 19.9093 19.6147 19.642L19.7729 13.53L11.3139 21.989C11.1203 22.1826 10.8615 22.2952 10.5945 22.3021C10.3275 22.3089 10.0742 22.2094 9.89022 22.0255Z" fill="white"/>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+               <div class="swiper-slide two-blocks">
+                  <div class="trade-notes__slideBlock">
+                     <div class="wrap-text with-serifs">
+                        <p>“Of course I had my ups and downs, but was a winner on balance. However, the Cosmopolitan people were not satisfied with the awful handicap they had tacked on me, which should have been enough to beat anybody. They tried to double-cross me. They didn't get me. I escaped because of one of my hunches.”</p>
+                        <p>page 583</p>
+                     </div>
+                     <a href="#" class="link">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 0.5C24.5604 0.5 31.5 7.43959 31.5 16C31.5 24.5604 24.5604 31.5 16 31.5C7.43959 31.5 0.5 24.5604 0.5 16C0.5 7.43959 7.43959 0.5 16 0.5Z" stroke="white"/>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89022 22.0255C9.70627 21.8415 9.60677 21.5882 9.61362 21.3212C9.62047 21.0542 9.73309 20.7954 9.92673 20.6018L18.3857 12.1428L12.2737 12.301C12.0064 12.3078 11.7527 12.2082 11.5685 12.024C11.3843 11.8398 11.2847 11.5862 11.2916 11.3188C11.2984 11.0515 11.4112 10.7924 11.6051 10.5985C11.799 10.4047 12.0581 10.2919 12.3254 10.285L20.8676 10.066C21 10.0624 21.1305 10.085 21.2516 10.1325C21.3726 10.1799 21.4819 10.2513 21.5731 10.3426C21.6644 10.4338 21.7358 10.5431 21.7832 10.6641C21.8307 10.7852 21.8533 10.9157 21.8497 11.0481L21.6307 19.5903C21.6238 19.8576 21.5111 20.1167 21.3172 20.3106C21.1233 20.5045 20.8642 20.6173 20.5969 20.6241C20.3295 20.631 20.0759 20.5314 19.8917 20.3472C19.7075 20.163 19.6079 19.9093 19.6147 19.642L19.7729 13.53L11.3139 21.989C11.1203 22.1826 10.8615 22.2952 10.5945 22.3021C10.3275 22.3089 10.0742 22.2094 9.89022 22.0255Z" fill="white"/>
+                        </svg>
+                     </a>
+                  </div>
+                  <div class="trade-notes__slideBlock">
+                     <div class="wrap-text with-serifs">
+                        <p>“Of course I had my ups and downs, but was a winner on balance. However, the Cosmopolitan people were not satisfied with the awful handicap.</p>
+                        <p>page 23</p>
+                     </div>
+                     <a href="#" class="link">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 0.5C24.5604 0.5 31.5 7.43959 31.5 16C31.5 24.5604 24.5604 31.5 16 31.5C7.43959 31.5 0.5 24.5604 0.5 16C0.5 7.43959 7.43959 0.5 16 0.5Z" stroke="white"/>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89022 22.0255C9.70627 21.8415 9.60677 21.5882 9.61362 21.3212C9.62047 21.0542 9.73309 20.7954 9.92673 20.6018L18.3857 12.1428L12.2737 12.301C12.0064 12.3078 11.7527 12.2082 11.5685 12.024C11.3843 11.8398 11.2847 11.5862 11.2916 11.3188C11.2984 11.0515 11.4112 10.7924 11.6051 10.5985C11.799 10.4047 12.0581 10.2919 12.3254 10.285L20.8676 10.066C21 10.0624 21.1305 10.085 21.2516 10.1325C21.3726 10.1799 21.4819 10.2513 21.5731 10.3426C21.6644 10.4338 21.7358 10.5431 21.7832 10.6641C21.8307 10.7852 21.8533 10.9157 21.8497 11.0481L21.6307 19.5903C21.6238 19.8576 21.5111 20.1167 21.3172 20.3106C21.1233 20.5045 20.8642 20.6173 20.5969 20.6241C20.3295 20.631 20.0759 20.5314 19.8917 20.3472C19.7075 20.163 19.6079 19.9093 19.6147 19.642L19.7729 13.53L11.3139 21.989C11.1203 22.1826 10.8615 22.2952 10.5945 22.3021C10.3275 22.3089 10.0742 22.2094 9.89022 22.0255Z" fill="white"/>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="trade-notes__slideBlock">
+                     <div class="wrap-text with-serifs">
+                        <p>“Of course I had my ups and downs, but was a winner on balance. However, the Cosmopolitan people were not satisfied with the awful handicap they had tacked on me, which should have been enough to beat anybody. They tried to double-cross me. They didn't get me. I escaped because of one of my hunches.”</p>
+                        <p>page 9</p>
+                     </div>
+                     <div class="wrap-text">
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis.</p>
+                     </div>
+                     <a href="#" class="link">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 0.5C24.5604 0.5 31.5 7.43959 31.5 16C31.5 24.5604 24.5604 31.5 16 31.5C7.43959 31.5 0.5 24.5604 0.5 16C0.5 7.43959 7.43959 0.5 16 0.5Z" stroke="white"/>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89022 22.0255C9.70627 21.8415 9.60677 21.5882 9.61362 21.3212C9.62047 21.0542 9.73309 20.7954 9.92673 20.6018L18.3857 12.1428L12.2737 12.301C12.0064 12.3078 11.7527 12.2082 11.5685 12.024C11.3843 11.8398 11.2847 11.5862 11.2916 11.3188C11.2984 11.0515 11.4112 10.7924 11.6051 10.5985C11.799 10.4047 12.0581 10.2919 12.3254 10.285L20.8676 10.066C21 10.0624 21.1305 10.085 21.2516 10.1325C21.3726 10.1799 21.4819 10.2513 21.5731 10.3426C21.6644 10.4338 21.7358 10.5431 21.7832 10.6641C21.8307 10.7852 21.8533 10.9157 21.8497 11.0481L21.6307 19.5903C21.6238 19.8576 21.5111 20.1167 21.3172 20.3106C21.1233 20.5045 20.8642 20.6173 20.5969 20.6241C20.3295 20.631 20.0759 20.5314 19.8917 20.3472C19.7075 20.163 19.6079 19.9093 19.6147 19.642L19.7729 13.53L11.3139 21.989C11.1203 22.1826 10.8615 22.2952 10.5945 22.3021C10.3275 22.3089 10.0742 22.2094 9.89022 22.0255Z" fill="white"/>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="trade-notes__slideBlock">
+                     <div class="wrap-text with-serifs">
+                        <p>“Of course I had my ups and downs, but was a winner on balance. However, the Cosmopolitan people were not satisfied with the awful handicap they had tacked on me, which should have been enough to beat anybody. They tried to double-cross me. They didn't get me. I escaped because of one of my hunches.”</p>
+                        <p>page 128</p>
+                     </div>
+                     <div class="wrap-text">
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis.</p>
+                     </div>
+                     <a href="#" class="link">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 0.5C24.5604 0.5 31.5 7.43959 31.5 16C31.5 24.5604 24.5604 31.5 16 31.5C7.43959 31.5 0.5 24.5604 0.5 16C0.5 7.43959 7.43959 0.5 16 0.5Z" stroke="white"/>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89022 22.0255C9.70627 21.8415 9.60677 21.5882 9.61362 21.3212C9.62047 21.0542 9.73309 20.7954 9.92673 20.6018L18.3857 12.1428L12.2737 12.301C12.0064 12.3078 11.7527 12.2082 11.5685 12.024C11.3843 11.8398 11.2847 11.5862 11.2916 11.3188C11.2984 11.0515 11.4112 10.7924 11.6051 10.5985C11.799 10.4047 12.0581 10.2919 12.3254 10.285L20.8676 10.066C21 10.0624 21.1305 10.085 21.2516 10.1325C21.3726 10.1799 21.4819 10.2513 21.5731 10.3426C21.6644 10.4338 21.7358 10.5431 21.7832 10.6641C21.8307 10.7852 21.8533 10.9157 21.8497 11.0481L21.6307 19.5903C21.6238 19.8576 21.5111 20.1167 21.3172 20.3106C21.1233 20.5045 20.8642 20.6173 20.5969 20.6241C20.3295 20.631 20.0759 20.5314 19.8917 20.3472C19.7075 20.163 19.6079 19.9093 19.6147 19.642L19.7729 13.53L11.3139 21.989C11.1203 22.1826 10.8615 22.2952 10.5945 22.3021C10.3275 22.3089 10.0742 22.2094 9.89022 22.0255Z" fill="white"/>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+               <div class="swiper-slide two-blocks">
+                  <div class="trade-notes__slideBlock">
+                     <div class="wrap-text with-serifs">
+                        <p>“Of course I had my ups and downs, but was a winner on balance. However, the Cosmopolitan people were not satisfied with the awful handicap they had tacked on me, which should have been enough to beat anybody. They tried to double-cross me. They didn't get me. I escaped because of one of my hunches.”</p>
+                        <p>page 583</p>
+                     </div>
+                     <a href="#" class="link">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 0.5C24.5604 0.5 31.5 7.43959 31.5 16C31.5 24.5604 24.5604 31.5 16 31.5C7.43959 31.5 0.5 24.5604 0.5 16C0.5 7.43959 7.43959 0.5 16 0.5Z" stroke="white"/>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89022 22.0255C9.70627 21.8415 9.60677 21.5882 9.61362 21.3212C9.62047 21.0542 9.73309 20.7954 9.92673 20.6018L18.3857 12.1428L12.2737 12.301C12.0064 12.3078 11.7527 12.2082 11.5685 12.024C11.3843 11.8398 11.2847 11.5862 11.2916 11.3188C11.2984 11.0515 11.4112 10.7924 11.6051 10.5985C11.799 10.4047 12.0581 10.2919 12.3254 10.285L20.8676 10.066C21 10.0624 21.1305 10.085 21.2516 10.1325C21.3726 10.1799 21.4819 10.2513 21.5731 10.3426C21.6644 10.4338 21.7358 10.5431 21.7832 10.6641C21.8307 10.7852 21.8533 10.9157 21.8497 11.0481L21.6307 19.5903C21.6238 19.8576 21.5111 20.1167 21.3172 20.3106C21.1233 20.5045 20.8642 20.6173 20.5969 20.6241C20.3295 20.631 20.0759 20.5314 19.8917 20.3472C19.7075 20.163 19.6079 19.9093 19.6147 19.642L19.7729 13.53L11.3139 21.989C11.1203 22.1826 10.8615 22.2952 10.5945 22.3021C10.3275 22.3089 10.0742 22.2094 9.89022 22.0255Z" fill="white"/>
+                        </svg>
+                     </a>
+                  </div>
+                  <div class="trade-notes__slideBlock">
+                     <div class="wrap-text with-serifs">
+                        <p>“Of course I had my ups and downs, but was a winner on balance. However, the Cosmopolitan people were not satisfied with the awful handicap.</p>
+                        <p>page 23</p>
+                     </div>
+                     <a href="#" class="link">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 0.5C24.5604 0.5 31.5 7.43959 31.5 16C31.5 24.5604 24.5604 31.5 16 31.5C7.43959 31.5 0.5 24.5604 0.5 16C0.5 7.43959 7.43959 0.5 16 0.5Z" stroke="white"/>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.89022 22.0255C9.70627 21.8415 9.60677 21.5882 9.61362 21.3212C9.62047 21.0542 9.73309 20.7954 9.92673 20.6018L18.3857 12.1428L12.2737 12.301C12.0064 12.3078 11.7527 12.2082 11.5685 12.024C11.3843 11.8398 11.2847 11.5862 11.2916 11.3188C11.2984 11.0515 11.4112 10.7924 11.6051 10.5985C11.799 10.4047 12.0581 10.2919 12.3254 10.285L20.8676 10.066C21 10.0624 21.1305 10.085 21.2516 10.1325C21.3726 10.1799 21.4819 10.2513 21.5731 10.3426C21.6644 10.4338 21.7358 10.5431 21.7832 10.6641C21.8307 10.7852 21.8533 10.9157 21.8497 11.0481L21.6307 19.5903C21.6238 19.8576 21.5111 20.1167 21.3172 20.3106C21.1233 20.5045 20.8642 20.6173 20.5969 20.6241C20.3295 20.631 20.0759 20.5314 19.8917 20.3472C19.7075 20.163 19.6079 19.9093 19.6147 19.642L19.7729 13.53L11.3139 21.989C11.1203 22.1826 10.8615 22.2952 10.5945 22.3021C10.3275 22.3089 10.0742 22.2094 9.89022 22.0255Z" fill="white"/>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="slider-blocks-pagination-1" class="trade-notes__pagination swiper-pagination"></div>
+      </div>
+
+   </div>
+   <div data-tabcontent="tab-bookmarks" class="tabContent">
+      
+      <div class="block-with-notification">
+         <div class="wrap-icon">
+            <img src="images/svg/no-bookmarks-yet-icon.svg" alt="">
+         </div>
+         <h4>
+            No Bookmarks Yet!
+            <br>
+            <span>Looks like you haven’t saved any gems yet</span>
+         </h4>
+         <p>mark the best insights and build your personal trading vault. Simply select the text, click ‘Add Bookmark,’ choose a color, and you’re all set!</p>
+      </div>
+
+   </div>
+   <div data-tabcontent="tab-notes" class="tabContent">
+      
+      <div class="block-with-notification">
+         <div class="wrap-icon">
+            <img src="images/svg/save-it-for-later-icon.svg" alt="">
+         </div>
+         <h4>
+            Save It for Later!
+            <br>
+            <span>Sign in to start saving your insights and never lose them!</span>
+         </h4>
+         <a href="#" class="button sign-in">Sign In to Start!</a>
+         <a href="#" class="button">Log in</a>
+      </div>
+
+   </div>
+</div>
+
+<div id="block-search" class="champer-page__blockChampersList">
+   <div class="champer-page__blockChampersListHead">
+      <div class="wrapCover">
+         <img src="images/books/book-cover-for-fs.jpg" alt="">
+      </div>
+      <p>
+         Reminiscences Of A Stock Operator
+         <br>
+         <span>by Edwin Lefèvre</span>
+      </p>
+      <button type="button" class="champer-page__btnBlockClose">
+         <img src="images/svg/champer-page-btn-block-close-icon.svg" alt="">
+      </button>
+   </div>
+   <div class="book__wrap-search-form">
+      <form>
+         <input type="text" placeholder="Input" value="Cosmopolitan">
+         <input type="submit">
+      </form>
+   </div>
+   <div class="wrap-content-search">
+      <div class="block-with-notification">
+         <div class="wrap-icon">
+            <img src="images/svg/cosmopolitan-icon.svg" alt="">
+         </div>
+         <h4>
+            “Cosmopolitan”
+            <br>
+            <span>isn’t in the trading book</span>
+         </h4>
+         <p>ry another term or check for typos!</p>
+      </div>
+   </div>
+</div>
+<!-- <- mobite/tablet -->
+
 <!-- <- New -->
 
 
 <!-- New -> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="swiper.js"></script>
+<script>
+
+	// Sliders
+	initializeBookBlocksSlider('slider-blocks-1', 'slider-blocks-pagination-1');
+
+</script>
 <script src="script.js"></script>
 <script src="custom-audio-player/script.js"></script>
 <script src="dynamic-adaptive.js"></script>

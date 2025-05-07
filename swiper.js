@@ -101,7 +101,7 @@ function initializeBookBlocksSlider(slidersliderBookBlocksId, BookBlocksPaginati
 }
 
 // Books
-function initializeBookSlider(sliderBookId, prevBookBtnId, nextBookBtnId) {
+function d(sliderBookId, prevBookBtnId, nextBookBtnId) {
    const sliderBook = document.getElementById(sliderBookId);
    if (sliderBook) {
       new Swiper(sliderBook, {
