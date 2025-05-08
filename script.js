@@ -379,6 +379,31 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    }
 
+   // Показ блока с настройками по клику на кнопку с шестеренкой (от 768)
+   let buttonShowSettings = document.getElementById('button-show-settings');
+   if (buttonShowSettings) {
+      let champerSidebar = document.getElementById('champer-sidebar');
+      if (champerSidebar) {
+         buttonShowSettings.addEventListener('click', () => {
+            buttonShowSettings.classList.toggle('active');
+            champerSidebar.classList.toggle('hidden-block-settings');
+            champerSidebar.classList.toggle('show-block-settings');
+         });
+      }
+   }
+   // Показ блока с настройками (до 767)
+   let buttonShowBlockSettings = document.getElementById('button-show-block-settings');
+   if (buttonShowBlockSettings) {
+      let blockSettings = document.getElementById('block-settings');
+
+      if (blockSettings) {
+         buttonShowBlockSettings.addEventListener('click', (e) => {
+            e.preventDefault();
+            blockSettings.classList.toggle('show');
+         });
+      }
+   }
+
    // Спрятать блока ChampersList до 767 по клику на любой элемент списка
    let champerPageBlockChampersListsLi = document.querySelectorAll('.champer-page__blockChampersList .champers__list li');
    if (champerPageBlockChampersListsLi.length > 0) {
