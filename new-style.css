@@ -2033,6 +2033,7 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    display: flex;
 }
 .champer-page__bottomWrapPlaeer-item:nth-child(1) {
+   padding-top: 3px;
    width: 332px;
 }
 .champer-page__bottomWrapPlaeer-item:nth-child(2) {
@@ -2043,6 +2044,7 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
 .champer-page__bottomWrapPlaeer-item-head {
    align-items: center;
    display: flex;
+   padding-top: 4px;
 }
 .champer-page__bottomWrapPlaeer-item-head .wrapCover {
    height: 87px;
@@ -2286,6 +2288,7 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
 }
 @media (min-width: 768px) {
 
+   .champer-page__bottomWrapPlaeer .champer-page__blockChampersListHead,
    .block-settings .champer-page__blockChampersListHead,
    .champer-page__sidebar.hidden-block-settings .block-settings,
    .champer-page__sidebar.show-block-settings .no-block-settings,
