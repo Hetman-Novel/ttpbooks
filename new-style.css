@@ -2028,6 +2028,53 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    line-height: 32px !important;
 }
 
+.champer-page__bottomWrapPlaeer-items {
+   align-items: center;
+   display: flex;
+}
+.champer-page__bottomWrapPlaeer-item:nth-child(1) {
+   width: 332px;
+}
+.champer-page__bottomWrapPlaeer-item:nth-child(2) {
+   padding-left: 32px;
+   padding-right: 32px;
+   width: calc(100% - 332px);
+}
+.champer-page__bottomWrapPlaeer-item-head {
+   align-items: center;
+   display: flex;
+}
+.champer-page__bottomWrapPlaeer-item-head .wrapCover {
+   height: 87px;
+   flex: 0 0 60px;
+   position: relative;
+   width: 60px;
+}
+.champer-page__bottomWrapPlaeer-item-head .wrapCover img {
+   border-radius: 4px;
+   left: 0;
+   height: 100%;
+   object-fit: cover;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+.champer-page__bottomWrapPlaeer-item-head p {
+   color: #fff;
+   font-family: "Gabarito", sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 16px;
+   margin: 0 0 0 9px;
+   max-width: 155px;
+}
+.champer-page__bottomWrapPlaeer-item-head p span {
+   color: #A0A0A0;
+   display: table;
+   font-size: 12px;
+   line-height: 14px;
+   margin-top: 3px;
+}
 
 @media (max-width: 1599px) {
 
@@ -2227,6 +2274,15 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    .text-size .slider-tooltip-wrap .tooltip.size-28 {
       left: 184px;
    }
+
+   .champer-page__bottomWrapPlaeer-item:nth-child(1) {
+      width: 180px;
+   }
+   .champer-page__bottomWrapPlaeer-item:nth-child(2) {
+      padding-left: 0;
+      padding-right: 0;
+      width: calc(100% - 180px);
+   }
 }
 @media (min-width: 768px) {
 
@@ -2334,12 +2390,13 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    .champer-page__buttonMenu {
       background-color: #1E1E1E;
       border-radius: 50px;
+      bottom: 180px;
       height: 44px;
       position: fixed;
       right: 15px;
       transition: 0.3s ease 0s;
       transform: translateY(-50%);
-      top: 60%;
+      top: auto;
       width: 44px;
       z-index: 50;
    }
@@ -2377,12 +2434,17 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
       width: 223px;
       z-index: 48;
    }
+   .champer-page__buttonMenu.active .button.audio-player,
    .champer-page__buttonMenu.active .button.chapters,
    .champer-page__buttonMenu.active .button.notes,
    .champer-page__buttonMenu.active .button.search,
    .champer-page__buttonMenu.active .button.setting {
       opacity: 1;
       visibility: visible;
+   }
+   .champer-page__buttonMenu.active .button.audio-player {
+      bottom: 239px;
+      transition: 0.1s ease 0.3s;
    }
    .champer-page__buttonMenu.active .button.chapters {
       bottom: 193px;
@@ -2438,10 +2500,20 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
       width: calc(100% - 30px);
    }
    .champer-page__bottomWrapPlaeer {
-      bottom: 0;
-      display: none;
+      height: auto !important;
+      padding-bottom: 17px;
       position: fixed !important;
-      z-index: 1;
+      z-index: 5;
+   }
+   .champer-page__bottomWrapPlaeer:not(.show) {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+   }
+   .champer-page__bottomWrapPlaeer .champer-page__btnBlockClose {
+      right: 10px;
+      top: 24px;
+      z-index: 5;
    }
    .back-link-top-page {
       left: 0;
@@ -2626,6 +2698,24 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
    }
    .text-size .slider-tooltip-wrap .tooltip.size-28 {
       left: 171px;
+   }
+
+   .champer-page__bottomWrapPlaeer-item:nth-child(1) {
+      display: none;
+   }
+   .champer-page__bottomWrapPlaeer-item:nth-child(2) {
+      padding-left: 0;
+      width: 100%;
+   }
+   .champer-page__bottomWrapPlaeer-item-head {
+      padding: 27px 105px 0 0;
+   }
+   .champer-page__bottomWrapPlaeer-item-head .wrapCover {
+      display: none;
+   }
+   .champer-page__bottomWrapPlaeer-item-head p {
+      margin: 0;
+      max-width: 100%;
    }
 }
 @media (max-width: 720px) {
@@ -3057,6 +3147,15 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
 
    .champer-page__number-of-words.hidden {
       display: none;
+   }
+
+   .champer-page__bottomWrapPlaeer {
+      padding-bottom: 10px;
+   }
+
+   .champer-page__buttonMenu {
+      bottom: 29px;
+      top: auto;
    }
 }
 @media (max-width: 480px) {

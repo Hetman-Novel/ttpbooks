@@ -379,6 +379,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    }
 
+   // Показ блок с плеером внизу до 767
+   let buttonShowAudioPlayer = document.getElementById('button-show-audio-player');
+   if (buttonShowAudioPlayer) {
+      let bottomBlockPlaeer = document.getElementById('bottom-block-plaeer');
+
+      if (bottomBlockPlaeer) {
+         buttonShowAudioPlayer.addEventListener('click', (e) => {
+            e.preventDefault();
+            bottomBlockPlaeer.classList.toggle('show');
+         });
+      }
+   }
+
    // Показ блока с настройками по клику на кнопку с шестеренкой (от 768)
    let buttonShowSettings = document.getElementById('button-show-settings');
    if (buttonShowSettings) {

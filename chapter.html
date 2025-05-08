@@ -847,27 +847,81 @@ src="https://www.facebook.com/tr?id=467617928712737&ev=PageView&noscript=1" />
             </div>
          </div>
       </div>
-      <div class="champer-page__buttonMenu">
-         <span>123</span>
-         <img src="images/svg/champer-page-button-menu-icon.svg" alt="">
-         <a href="#" class="button chapters" id="button-show-block-chapters-list">
-            <p>Chapters <span>6</span></p>
-         </a>
-         <a href="#" class="button notes" id="button-show-block-with-tabs">
-            <p>Notes & Bookmarks <span>124</span></p>
-         </a>
-         <a href="#" class="button search" id="button-show-block-search">
-            <p>Search Book <img src="images/svg/champer-page-button-menu-search-icon.svg" alt=""></p>
-         </a>
-         <a href="#" class="button setting" id="button-show-block-settings">
-            <p>Setting <img src="images/svg/champer-page-button-menu-settings-icon.svg" alt=""></p>
-         </a>
-      </div>
    </div>
 
-   <div class="champer-page__bottomWrapPlaeer">
+   <div id="bottom-block-plaeer" class="champer-page__bottomWrapPlaeer">
+      <div class="champer-page__blockChampersListHead">
+         <button type="button" class="champer-page__btnBlockClose">
+            <img src="images/svg/champer-page-btn-block-close-icon.svg" alt="">
+         </button>
+      </div>
       <div class="container">
-
+         <div class="champer-page__bottomWrapPlaeer-items">
+            <div class="champer-page__bottomWrapPlaeer-item">
+               <div data-da="champer-page-plaeer-item-two, 0, 767" class="champer-page__bottomWrapPlaeer-item-head">
+                  <div class="wrapCover">
+                     <img src="images/books/book-cover-for-fs.jpg" alt="">
+                  </div>
+                  <p>
+                     Reminiscences Of A Stock Operator
+                     <br>
+                     <span>by Edwin Lefèvre</span>
+                  </p>
+               </div>
+            </div>
+            <div class="champer-page__bottomWrapPlaeer-item champer-page-plaeer-item-two">
+               <div class="audio-player audio-player--full">
+                  <div class="audio-player__controls">
+                     <div class="wrap-buttons wrap-buttons-center">
+                        <button type="button" class="audio-player__btn speed">
+                           <img src="images/svg/audio-player-full-speed-icon.svg" alt="">
+                        </button>
+                        <button type="button" class="audio-player__btn forward-left">
+                           <img src="images/svg/audio-player-full-forward-left-icon.svg" alt="">
+                        </button>
+                        <button type="button" class="audio-player__btn back">
+                           <img src="images/svg/audio-player-full-back-icon.svg" alt="">
+                        </button>
+                        <button type="button" class="audio-player__btn play" data-audio-id="audio1"></button>
+                        <button type="button" class="audio-player__btn next">
+                           <img src="images/svg/audio-player-full-next-icon.svg" alt="">
+                        </button>
+                        <button type="button" class="audio-player__btn forward-right">
+                           <img src="images/svg/audio-player-full-forward-icon.svg" alt="">
+                        </button>
+                        <!--<button type="button" class="audio-player__btn repeat">🔁</button>-->
+                     </div>
+                     <div class="wrap-buttons wrap-buttons-right">
+                        <button type="button" class="audio-player__btn plus">
+                           <img src="images/svg/audio-player-full-plus-icon.svg" alt="">
+                        </button>
+                        <button type="button" class="audio-player__btn share">
+                           <img src="images/svg/audio-player-full-share-icon.svg" alt="">
+                        </button>
+                        <div class="audio-player__volume">
+                           <button type="button" class="audio-player__btn mute">
+                              <img src="images/svg/audio-player-full-volume-icon.svg" alt="">
+                           </button>
+                           <div class="audio-player__volume-bar" data-volume="50">
+                              <div class="audio-player__volume-fill"></div>
+                           </div>
+                        </div>
+                        <button type="button" class="audio-player__btn screen">
+                           <img src="images/svg/audio-player-full-screen-icon.svg" alt="">
+                        </button>
+                     </div>
+                  </div>
+                  <div class="audio-player__progress">
+                     <div class="audio-player__time audio-player__time--start">0:00</div>
+                     <div class="audio-player__progress-bar">
+                        <div class="audio-player__progress-fill"></div>
+                     </div>
+                     <div class="audio-player__time audio-player__time--end">0:00</div>
+                  </div>
+                  <audio id="audio1" src="custom-audio-player/Instrumental_-_violin_piano_and_bites.mp3"></audio><!-- mute, ended, loadedmetadata -->
+               </div>
+            </div>
+         </div>
       </div>
    </div>
 
@@ -1148,6 +1202,26 @@ src="https://www.facebook.com/tr?id=467617928712737&ev=PageView&noscript=1" />
             <p>ry another term or check for typos!</p>
          </div>
       </div>
+   </div>
+   
+   <div class="champer-page__buttonMenu">
+      <span>123</span>
+      <img src="images/svg/champer-page-button-menu-icon.svg" alt="">
+      <a href="#" class="button audio-player" id="button-show-audio-player">
+         <p>Audio player</p>
+      </a>
+      <a href="#" class="button chapters" id="button-show-block-chapters-list">
+         <p>Chapters <span>6</span></p>
+      </a>
+      <a href="#" class="button notes" id="button-show-block-with-tabs">
+         <p>Notes & Bookmarks <span>124</span></p>
+      </a>
+      <a href="#" class="button search" id="button-show-block-search">
+         <p>Search Book <img src="images/svg/champer-page-button-menu-search-icon.svg" alt=""></p>
+      </a>
+      <a href="#" class="button setting" id="button-show-block-settings">
+         <p>Setting <img src="images/svg/champer-page-button-menu-settings-icon.svg" alt=""></p>
+      </a>
    </div>
 </div>
 <!-- <- mobite/tablet -->
