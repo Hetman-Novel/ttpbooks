@@ -181,58 +181,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // для смены цвета при выделении текста
    const containers = document.querySelectorAll('.js-change-selection-color');
-   containers.forEach((container, index) => {
+   const storageKey = 'highlightColor'; // единый ключ для всех блоков
+   // Цвета, которые нужно сбрасывать
+   const allColors = ['vivid-pink', 'strong-cyan', 'dark-moderate-violet', 'strong-yellow'];
+   // Восстановление выбранного цвета из localStorage
+   const storedClass = localStorage.getItem(storageKey);
+   // Функция применения цвета ко всем контейнерам
+   function applyColorToAll(colorClass) {
+      containers.forEach(container => {
+         container.classList.remove(...allColors);
+         container.classList.add(colorClass);
+
+         // Установить состояние радио
+         const radios = container.querySelectorAll('input[name="highlight-color"]');
+         radios.forEach(radio => {
+            radio.checked = radio.classList.contains(colorClass);
+         });
+      });
+   }
+   // Применить сохранённый цвет при загрузке
+   if (storedClass) {
+      applyColorToAll(storedClass);
+   }
+   // Основная логика по каждому контейнеру
+   containers.forEach(container => {
       const radios = container.querySelectorAll('input[name="highlight-color"]');
       const form = container.querySelector('.champer-page__blockToSelectAcolorWhenSelecting form');
       const notify = form?.querySelector('.notify');
-      const storageKey = 'highlightColorBlock' + index;
-   
-      // Восстановление из localStorage
-      const storedClass = localStorage.getItem(storageKey);
-      if (storedClass) {
-         container.classList.add(storedClass);
-         const matchingRadio = container.querySelector(`input.${storedClass}`);
-         if (matchingRadio) matchingRadio.checked = true;
-      }
-   
-      // Применение класса
-      const applySelectedColorClass = () => {
-         container.classList.remove('vivid-pink', 'strong-cyan', 'dark-moderate-violet', 'strong-yellow');
-         const selected = container.querySelector('input[name="highlight-color"]:checked');
-         if (selected) {
-            const colorClass = selected.classList[0];
-            container.classList.add(colorClass);
-         }
-      };
-   
-      // Назначаем на все радиокнопки
+
+      // Слушатель на выбор цвета
       radios.forEach(radio => {
-         radio.addEventListener('change', applySelectedColorClass);
+         radio.addEventListener('change', () => {
+            const colorClass = radio.classList[0]; // используем первый класс как идентификатор
+            localStorage.setItem(storageKey, colorClass); // сохраняем
+            applyColorToAll(colorClass); // применяем ко всем
+         });
       });
-   
-      // Обработка сабмита формы
+
+      // Обработка сабмита формы (опционально)
       if (form) {
          form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Предотвращаем перезагрузку
-   
+            e.preventDefault();
+
             const selected = container.querySelector('input[name="highlight-color"]:checked');
             if (selected) {
-            const colorClass = selected.classList[0];
-            localStorage.setItem(storageKey, colorClass);
+               const colorClass = selected.classList[0];
+               localStorage.setItem(storageKey, colorClass);
+               applyColorToAll(colorClass);
             }
-   
+
             // Показ уведомления
             if (notify) {
                notify.classList.add('show');
                setTimeout(() => {
                   notify.classList.remove('show');
-               }, 3000); // 3 секунды
+               }, 3000);
             }
          });
       }
-   
-      // Применяем при загрузке
-      applySelectedColorClass();
    });
 
    // Закрыть по клику на Cancel
@@ -381,6 +387,301 @@ document.addEventListener('DOMContentLoaded', function () {
             champerPageBlockChampersListLi.parentNode.parentNode.classList.remove('show');
          })
       });
+   }
+
+   // Settings
+   const colorTarget = document.querySelector('.js-background-color');
+   const textPreview = document.querySelector('.js-text-size');
+   const bgInputs = document.querySelectorAll('input[name="bg-color"]');
+   const textSizeRange = document.getElementById('text-size-range');
+   const toggleCounts = document.getElementById('toggle-counts');
+   const applyBtn = document.getElementById('apply-button');
+   const resetBtn = document.getElementById('reset-button');
+   const settingsSaved = document.querySelector('.settings-saved');
+   const wordCountBlock = document.querySelector('.champer-page__number-of-words');
+   const textSizes = [16, 18, 20, 22, 24, 28];
+   // === Смена фонового цвета ===
+   bgInputs.forEach(input => {
+      input.addEventListener('change', () => {
+         const selected = input.value;
+      
+         // Удаляем старые классы bg-*
+         colorTarget.classList.forEach(cls => {
+            if (cls.startsWith('bg-')) colorTarget.classList.remove(cls);
+         });
+      
+         colorTarget.classList.add(`bg-${selected}`);
+         localStorage.setItem('selectedBackground', selected);
+      });
+   });
+   // === Смена размера текста === ->
+   const tooltip = document.querySelector('.tooltip');
+   const decreaseBtn = document.getElementById('decrease-size');
+   const increaseBtn = document.getElementById('increase-size');
+   const sliderProgress = document.querySelector('.slider-progress');
+   
+   // Функция для обновления тултипа, прогресса и размера текста
+   function updateTooltip(range) {
+      const index = parseInt(range.value, 10);
+      const size = textSizes[index];
+    
+      // Обновляем тултип
+      tooltip.textContent = "Aa";
+      //tooltip.style.fontSize = `${size}px`;
+    
+      // Удаляем старые классы "size-*" с tooltip
+      tooltip.classList.forEach(cls => {
+        if (cls.startsWith('size-')) tooltip.classList.remove(cls);
+      });
+      tooltip.classList.add(`size-${size}`);
+    
+      // Рассчитываем процент и позицию
+      const percent = (range.value - range.min) / (range.max - range.min);
+      const trackWidth = range.offsetWidth;
+      const left = percent * trackWidth;
+    
+      // Позиция тултипа
+      //tooltip.style.left = `${left}px`;
+    
+      // Устанавливаем ширину прогресса
+      const progressPercent = Math.round(percent * 100);
+      sliderProgress.style.width = `${progressPercent}%`;
+    
+      // Удаляем старые классы "width-*" с прогресса
+      sliderProgress.classList.forEach(cls => {
+        if (cls.startsWith('width-')) sliderProgress.classList.remove(cls);
+      });
+      sliderProgress.classList.add(`width-${progressPercent}`);
+    
+      // Обновляем размер текста превью
+      //textPreview.style.fontSize = `${size}px`;
+      textPreview.classList.forEach(cls => {
+        if (cls.startsWith('size-')) textPreview.classList.remove(cls);
+      });
+      textPreview.classList.add(`size-${size}`);
+
+      localStorage.setItem('tooltipSizeClass', `size-${size}`);
+      localStorage.setItem('sliderProgressWidth', `width-${Math.round(percent * 100)}`)
+   }
+   
+   // Обработчик событий для изменения значения ползунка
+   textSizeRange.addEventListener('input', () => {
+      updateTooltip(textSizeRange);
+      // Сохраняем выбранный размер в localStorage
+      //localStorage.setItem('selectedTextSize', textSizes[textSizeRange.value]);
+      localStorage.setItem('selectedTextSizeIndex', textSizeRange.value);
+   });
+   
+   // Кнопка уменьшения
+   decreaseBtn.addEventListener('click', () => {
+     let val = parseInt(textSizeRange.value, 10);
+     textSizeRange.value = Math.max(val - 1, textSizeRange.min);
+     updateTooltip(textSizeRange);
+   });
+   
+   // Кнопка увеличения
+   increaseBtn.addEventListener('click', () => {
+     let val = parseInt(textSizeRange.value, 10);
+     textSizeRange.value = Math.min(val + 1, textSizeRange.max);
+     updateTooltip(textSizeRange);
+   });
+   
+   // При загрузке страницы, если размер был сохранен в localStorage, применяем его.
+   window.addEventListener('load', () => {
+      const savedSize = localStorage.getItem('selectedTextSize');
+      if (savedSize) {
+         const index = textSizes.indexOf(Number(savedSize));
+         if (index !== -1) {
+            textSizeRange.value = index;
+            updateTooltip(textSizeRange); // Обновляем тултип и размер
+         }
+      }
+   });
+   // === <- Смена размера текста ===
+   // === Смена состояния чекбокса ===
+   toggleCounts.addEventListener('change', () => {
+      const isChecked = toggleCounts.checked;
+      localStorage.setItem('showCounts', isChecked ? '1' : '0');
+      
+      if (wordCountBlock) {
+         wordCountBlock.classList.toggle('hidden', !isChecked);
+      }
+   });
+   // === Кнопка "Apply Changes" ===
+   applyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      if (toggleCounts.checked && wordCountBlock) {
+         wordCountBlock.classList.remove('hidden');
+      }
+      
+      if (settingsSaved) {
+         settingsSaved.classList.add('show');
+         setTimeout(() => settingsSaved.classList.remove('show'), 3000);
+      }
+
+      localStorage.setItem('selectedTextSizeIndex', textSizeRange.value);
+      localStorage.setItem('tooltipSizeClass', tooltip.classList.value.match(/size-\d+/)?.[0] || '');
+      localStorage.setItem('sliderProgressWidth', sliderProgress.classList.value.match(/width-\d+/)?.[0] || '');
+   });
+   // === Кнопка "Reset to Default" ===
+   resetBtn.addEventListener('click', (e) => {
+     e.preventDefault();
+   
+     const defaultBg = 'black';
+     const defaultSize = 16;
+     const defaultSizeIndex = textSizes.indexOf(defaultSize);
+   
+      // Сброс цвета
+      colorTarget.classList.forEach(cls => {
+         if (cls.startsWith('bg-')) colorTarget.classList.remove(cls);
+      });
+      colorTarget.classList.add(`bg-${defaultBg}`);
+      const defaultInput = document.querySelector(`input[name="bg-color"][value="${defaultBg}"]`);
+      if (defaultInput) defaultInput.checked = true;
+   
+      // Сброс размера
+      textPreview.classList.forEach(cls => {
+         if (cls.startsWith('size-')) textPreview.classList.remove(cls);
+      });
+      textPreview.classList.add(`size-${defaultSize}`);
+      textSizeRange.value = defaultSizeIndex;
+
+      // Обновление tooltip
+      tooltip.textContent = 'Aa';
+      tooltip.style.fontSize = `${defaultSize}px`;
+      tooltip.classList.forEach(cls => {
+         if (cls.startsWith('size-')) tooltip.classList.remove(cls);
+      });
+      tooltip.classList.add('size-16');
+
+      // Сброс прогресса
+      sliderProgress.style.width = '0%';
+      sliderProgress.classList.forEach(cls => {
+         if (cls.startsWith('width-')) sliderProgress.classList.remove(cls);
+      });
+      sliderProgress.classList.add('width-0');
+   
+      // Сброс чекбокса
+      toggleCounts.checked = true;
+      if (wordCountBlock) wordCountBlock.classList.add('hidden');
+   
+      // Очистка localStorage
+      localStorage.removeItem('selectedBackground');
+      localStorage.removeItem('selectedTextSize');
+      localStorage.removeItem('showCounts');
+
+      // Сброс цвета выделения
+      //localStorage.removeItem('selectedHighlightColor');
+      //colorRadios.forEach(radio => radio.checked = false);
+
+      // Сброс цвета выделения
+      localStorage.removeItem('highlightColorBlock0'); // если индекс только один, либо удалить все, если их несколько
+
+      document.querySelectorAll('.js-change-selection-color').forEach(container => {
+      const radios = container.querySelectorAll('input[name="highlight-color"]');
+      const allColors = ['vivid-pink', 'strong-cyan', 'dark-moderate-violet', 'strong-yellow'];
+
+      // Удаляем все цветовые классы
+      container.classList.remove(...allColors);
+
+      // Устанавливаем радио с checked из HTML (атрибут по умолчанию)
+      const defaultRadio = Array.from(radios).find(r => r.defaultChecked);
+      if (defaultRadio) {
+         defaultRadio.checked = true;
+         const defaultClass = defaultRadio.classList[0];
+         container.classList.add(defaultClass);
+      }
+      });
+
+   });
+   // === Восстановление при загрузке ===
+   window.addEventListener('DOMContentLoaded', () => {
+     const savedBg = localStorage.getItem('selectedBackground');
+     const savedSize = localStorage.getItem('selectedTextSize');
+     const showCounts = localStorage.getItem('showCounts');
+   
+      // Цвет
+      if (savedBg) {
+         colorTarget.classList.forEach(cls => {
+            if (cls.startsWith('bg-')) colorTarget.classList.remove(cls);
+         });
+         colorTarget.classList.add(`bg-${savedBg}`);
+      
+         const input = document.querySelector(`input[name="bg-color"][value="${savedBg}"]`);
+         if (input) input.checked = true;
+      }
+   
+      // Размер
+      if (savedSize) {
+         textPreview.classList.forEach(cls => {
+            if (cls.startsWith('size-')) textPreview.classList.remove(cls);
+         });
+         textPreview.classList.add(`size-${savedSize}`);
+      
+         const index = textSizes.indexOf(parseInt(savedSize));
+         if (index !== -1) textSizeRange.value = index;
+      }
+   
+      // Чекбокс
+      if (showCounts === '1') {
+         toggleCounts.checked = true;
+         if (wordCountBlock) wordCountBlock.classList.remove('hidden');
+      } else {
+         toggleCounts.checked = false;
+         if (wordCountBlock) wordCountBlock.classList.add('hidden');
+      }
+   });
+
+   // Синхронизированные кнопки выбора при выделении текста
+   const colorRadios = document.querySelectorAll('input[data-group="highlight-color"]');
+   // === При изменении одной кнопки — обновляем все остальные ===
+   colorRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+         if (!radio.checked) return;
+
+         const selectedColor = radio.dataset.color;
+         localStorage.setItem('selectedHighlightColor', selectedColor);
+
+         colorRadios.forEach(otherRadio => {
+            if (otherRadio.dataset.color === selectedColor) {
+               otherRadio.checked = true;
+            } else {
+               otherRadio.checked = false;
+            }
+         });
+      });
+   });
+   // === При загрузке страницы — восстановление ===
+   window.addEventListener('DOMContentLoaded', () => {
+      const savedHighlightColor = localStorage.getItem('selectedHighlightColor');
+      if (savedHighlightColor) {
+         colorRadios.forEach(radio => {
+            radio.checked = radio.dataset.color === savedHighlightColor;
+         });
+      }
+   });
+   // Восстановление размера текста
+   const savedSizeIndex = localStorage.getItem('selectedTextSizeIndex');
+   if (savedSizeIndex !== null) {
+      textSizeRange.value = savedSizeIndex;
+      updateTooltip(textSizeRange);
+   }
+   // Восстановление классов тултипа
+   const tooltipSizeClass = localStorage.getItem('tooltipSizeClass');
+   if (tooltipSizeClass) {
+      tooltip.classList.forEach(cls => {
+         if (cls.startsWith('size-')) tooltip.classList.remove(cls);
+      });
+      tooltip.classList.add(tooltipSizeClass);
+   }
+   // Восстановление прогресса
+   const sliderWidthClass = localStorage.getItem('sliderProgressWidth');
+   if (sliderWidthClass) {
+      sliderProgress.classList.forEach(cls => {
+         if (cls.startsWith('width-')) sliderProgress.classList.remove(cls);
+      });
+      sliderProgress.classList.add(sliderWidthClass);
    }
 });
 
