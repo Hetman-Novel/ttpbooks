@@ -1038,6 +1038,9 @@ img[loading=lazy] {
 }
 
 img.black,
+.js-background-color.bg-black img.black,
+.js-background-color.bg-silver img.black,
+.js-background-color.bg-charcoal img.black,
 .js-background-color.bg-white .champer-page__buttonMenu:not(.active) > img.white,
 .js-background-color.bg-white .champer-page__buttonMenu > img.black,
 .js-background-color.bg-white img.white {
@@ -3025,6 +3028,13 @@ body.page-template-champers-single .champer-page__bottomWrapPlaeer {
 
    .audio-page__blockCover {
       margin-bottom: 200px;
+   }
+
+   .audio-player__info .audio-player__progress {
+      flex-wrap: nowrap;
+   }
+   .audio-player__info .audio-player__progress-bar {
+      width: 78%;
    }
 }
 @media (max-width: 720px) {

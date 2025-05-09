@@ -64,6 +64,8 @@ if (booksTopSlider) {
    });
 }
 
+
+
 // Books top slider
 function initializeBookBlocksSlider(slidersliderBookBlocksId, BookBlocksPaginationId) {
    const sliderBookBlocks = document.getElementById(slidersliderBookBlocksId);
@@ -101,7 +103,7 @@ function initializeBookBlocksSlider(slidersliderBookBlocksId, BookBlocksPaginati
 }
 
 // Books
-function d(sliderBookId, prevBookBtnId, nextBookBtnId) {
+function initializeBookSlider(sliderBookId, prevBookBtnId, nextBookBtnId) {
    const sliderBook = document.getElementById(sliderBookId);
    if (sliderBook) {
       new Swiper(sliderBook, {
